@@ -1,2 +1,1217 @@
-# landing-nutricionista
-portfolio
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dra. Ana Silva · Nutricionista | Emagrecimento Sustentável</title>
+<meta name="description" content="Nutricionista especializada em emagrecimento saudável e sustentável. Planos personalizados para perda de peso sem dietas restritivas. Agende sua consulta.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;800&display=swap" rel="stylesheet">
+
+<style>
+  /* ── Reset & Base ── */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --green-950: #0d2205;
+    --green-900: #173404;
+    --green-800: #27500a;
+    --green-700: #3B6D11;
+    --green-600: #4a8415;
+    --green-400: #639922;
+    --green-200: #C0DD97;
+    --green-100: #EAF3DE;
+    --green-50:  #f4f9ed;
+    --cream:     #faf8f3;
+    --white:     #ffffff;
+    --gray-100:  #f5f4f0;
+    --gray-200:  #e8e6e1;
+    --gray-400:  #a09e98;
+    --gray-600:  #6b6962;
+    --gray-900:  #1c1b18;
+    --font-display: 'Poppins', system-ui, sans-serif;
+    --font-body:    'Poppins', system-ui, sans-serif;
+    --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+    --section-pad: clamp(64px, 8vw, 112px);
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--font-body);
+    background: var(--cream);
+    color: var(--gray-900);
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  img { max-width: 100%; display: block; }
+
+  /* ── Utilities ── */
+  .container {
+    width: min(680px, 100% - 48px);
+    margin-inline: auto;
+  }
+
+  .tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: var(--font-body);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 5px 14px;
+    border-radius: 100px;
+  }
+  .tag-green  { background: var(--green-100); color: var(--green-800); }
+  .tag-white  { background: rgba(255,255,255,0.15); color: rgba(255,255,255,0.9); border: 1px solid rgba(255,255,255,0.3); }
+  .tag-dark   { background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.7); border: 1px solid rgba(255,255,255,0.15); }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 16px 32px;
+    border-radius: 100px;
+    font-family: var(--font-body);
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    border: none;
+    text-decoration: none;
+    transition: transform 0.2s var(--ease-out), box-shadow 0.2s var(--ease-out), background 0.2s;
+    white-space: nowrap;
+  }
+  .btn:hover  { transform: translateY(-2px); }
+  .btn:active { transform: translateY(0); }
+
+  .btn-primary {
+    background: var(--green-700);
+    color: #fff;
+    box-shadow: 0 4px 24px rgba(59,109,17,0.35);
+  }
+  .btn-primary:hover { background: var(--green-800); box-shadow: 0 8px 32px rgba(59,109,17,0.45); }
+
+  .btn-white {
+    background: #fff;
+    color: var(--green-800);
+    box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+  }
+  .btn-white:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.18); }
+
+  .btn-outline {
+    background: transparent;
+    color: var(--green-700);
+    border: 1.5px solid var(--green-700);
+  }
+  .btn-outline:hover { background: var(--green-100); }
+
+  .btn-full { width: 100%; }
+
+  /* ── Check list ── */
+  .checklist { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+  .checklist li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 15px;
+    line-height: 1.6;
+  }
+  .checklist li::before {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 20px;
+    min-width: 20px;
+    margin-top: 2px;
+    border-radius: 50%;
+    background: var(--green-100);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpolyline points='4,10 8,14 16,6' fill='none' stroke='%233B6D11' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  }
+  .checklist-white li { color: rgba(255,255,255,0.88); }
+  .checklist-white li::before {
+    background: rgba(255,255,255,0.15);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpolyline points='4,10 8,14 16,6' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  }
+
+  /* ── Scroll Reveal ── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(32px);
+    transition: opacity 0.7s var(--ease-out), transform 0.7s var(--ease-out);
+  }
+  .reveal.visible { opacity: 1; transform: none; }
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+  .reveal-delay-4 { transition-delay: 0.4s; }
+
+  /* ════════════════════════════
+     NAV
+  ════════════════════════════ */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 18px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: background 0.3s, backdrop-filter 0.3s, box-shadow 0.3s;
+  }
+  nav.scrolled {
+    background: rgba(250,248,243,0.92);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 1px 0 rgba(0,0,0,0.06);
+  }
+  .nav-logo {
+    font-family: var(--font-display);
+    font-size: 18px;
+    color: var(--green-700);
+    text-decoration: none;
+  }
+  .nav-cta { font-size: 13px; padding: 10px 22px; }
+
+  /* ════════════════════════════
+     HERO
+  ════════════════════════════ */
+  #hero {
+    background: linear-gradient(165deg, var(--green-950) 0%, var(--green-800) 50%, var(--green-600) 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 72px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* organic blob background */
+  #hero::before {
+    content: '';
+    position: absolute;
+    top: -20%;
+    right: -20%;
+    width: 70%;
+    aspect-ratio: 1;
+    background: radial-gradient(circle, rgba(192,221,151,0.12) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+  #hero::after {
+    content: '';
+    position: absolute;
+    bottom: 10%;
+    left: -10%;
+    width: 50%;
+    aspect-ratio: 1;
+    background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+
+  .hero-inner {
+    position: relative;
+    z-index: 1;
+    padding: clamp(24px, 4vw, 48px) 24px clamp(32px, 4vw, 48px);
+    max-width: 720px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 100px;
+    padding: 6px 16px 6px 8px;
+    margin-bottom: 14px;
+    font-size: 12px;
+    color: rgba(255,255,255,0.85);
+  }
+  .hero-badge-dot {
+    width: 8px; height: 8px;
+    background: #a8d87a;
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50%       { opacity: 0.6; transform: scale(1.3); }
+  }
+
+  .hero-h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(28px, 5.5vw, 56px);
+    font-weight: 800;
+    line-height: 1.12;
+    color: #fff;
+    margin-bottom: 14px;
+    letter-spacing: -0.02em;
+    max-width: 620px;
+  }
+  .hero-h1 .highlight {
+    color: #a8d87a;
+    position: relative;
+  }
+
+  .hero-sub {
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(15px, 2vw, 18px);
+    font-weight: 400;
+    color: rgba(255,255,255,0.72);
+    max-width: 540px;
+    margin-bottom: 16px;
+    line-height: 1.55;
+  }
+
+  .hero-checks {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 20px;
+  }
+  .hero-check {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 15px;
+    font-weight: 400;
+    color: rgba(255,255,255,0.85);
+    line-height: 1.5;
+  }
+  .hero-check svg { flex-shrink: 0; }
+
+  .hero-cta-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+
+  .hero-proof {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 20px;
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 16px;
+    backdrop-filter: blur(8px);
+    max-width: 420px;
+  }
+  .hero-proof-photo {
+    width: 56px; height: 56px; min-width: 56px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.12);
+    border: 2px solid rgba(255,255,255,0.25);
+    overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    position: relative;
+  }
+  .hero-proof-photo img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+  .hero-proof-photo .photo-placeholder {
+    font-size: 11px;
+    font-weight: 500;
+    color: rgba(255,255,255,0.5);
+    text-align: center;
+    line-height: 1.3;
+    padding: 4px;
+  }
+  .hero-proof-name { font-size: 15px; font-weight: 600; color: #fff; margin-bottom: 2px; }
+  .hero-proof-role { font-size: 12px; color: rgba(255,255,255,0.55); margin-bottom: 4px; }
+  .hero-proof-stat { font-size: 12px; color: #a8d87a; font-weight: 500; }
+
+  /* ════════════════════════════
+     SECTION BASE
+  ════════════════════════════ */
+  section { padding: var(--section-pad) 24px; }
+  .section-label { margin-bottom: 16px; }
+  .section-h2 {
+    font-family: var(--font-display);
+    font-size: clamp(28px, 4vw, 40px);
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    margin-bottom: 16px;
+  }
+  .section-body {
+    font-size: 16px;
+    color: var(--gray-600);
+    line-height: 1.75;
+    max-width: 560px;
+  }
+
+  /* ════════════════════════════
+     DOR
+  ════════════════════════════ */
+  #dor { background: var(--white); }
+  .dor-grid {
+    display: grid;
+    gap: 12px;
+    margin: 28px 0;
+  }
+  .dor-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 18px 20px;
+    background: var(--gray-100);
+    border-radius: 14px;
+    border: 1px solid var(--gray-200);
+    transition: border-color 0.2s, transform 0.2s;
+  }
+  .dor-item:hover { border-color: var(--green-200); transform: translateX(4px); }
+  .dor-icon {
+    width: 36px; height: 36px; min-width: 36px;
+    border-radius: 10px;
+    background: var(--green-100);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 16px;
+  }
+  .dor-text { font-size: 15px; color: var(--gray-900); line-height: 1.5; padding-top: 6px; }
+
+  .dor-callout {
+    padding: 20px 24px;
+    background: var(--green-100);
+    border-radius: 14px;
+    border-left: 3px solid var(--green-700);
+    font-size: 15px;
+    color: var(--green-900);
+    line-height: 1.6;
+    font-style: italic;
+  }
+
+  /* ════════════════════════════
+     CRENÇA
+  ════════════════════════════ */
+  #crenca { background: var(--green-950); }
+  #crenca .section-h2 { color: #fff; }
+  #crenca .section-body { color: rgba(255,255,255,0.6); }
+  .crenca-quote {
+    margin-top: 32px;
+    padding: 24px 28px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 16px;
+  }
+  .crenca-quote p {
+    font-family: var(--font-display);
+    font-size: clamp(20px, 3vw, 28px);
+    color: var(--green-200);
+    line-height: 1.4;
+    font-style: italic;
+  }
+
+  /* ════════════════════════════
+     SOLUÇÃO
+  ════════════════════════════ */
+  #solucao { background: var(--cream); }
+  .solucao-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+    margin-top: 32px;
+  }
+  .solucao-card {
+    padding: 24px;
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: 18px;
+    transition: transform 0.25s var(--ease-out), box-shadow 0.25s var(--ease-out);
+  }
+  .solucao-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(59,109,17,0.1);
+    border-color: var(--green-200);
+  }
+  .solucao-card-icon {
+    width: 44px; height: 44px;
+    border-radius: 12px;
+    background: var(--green-100);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px;
+    margin-bottom: 14px;
+  }
+  .solucao-card-title { font-size: 15px; font-weight: 500; margin-bottom: 6px; }
+  .solucao-card-body  { font-size: 13px; color: var(--gray-600); line-height: 1.6; }
+
+  /* ════════════════════════════
+     COMO FUNCIONA
+  ════════════════════════════ */
+  #processo { background: var(--white); }
+  .steps { display: flex; flex-direction: column; gap: 0; margin-top: 32px; }
+  .step {
+    display: flex;
+    gap: 20px;
+    position: relative;
+  }
+  .step-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0;
+  }
+  .step-num {
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    background: var(--green-700);
+    color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 500;
+    font-size: 16px;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 1;
+    transition: transform 0.2s;
+  }
+  .step:hover .step-num { transform: scale(1.1); }
+  .step-line {
+    width: 1px;
+    flex: 1;
+    background: var(--gray-200);
+    margin: 6px 0;
+    min-height: 40px;
+  }
+  .step:last-child .step-line { display: none; }
+  .step-content { padding: 8px 0 32px; }
+  .step-title { font-size: 17px; font-weight: 500; margin-bottom: 6px; }
+  .step-body  { font-size: 14px; color: var(--gray-600); line-height: 1.6; }
+
+  /* ════════════════════════════
+     DEPOIMENTOS
+  ════════════════════════════ */
+  #depoimentos { background: var(--cream); }
+  .testimonials-grid {
+    display: grid;
+    gap: 16px;
+    margin-top: 32px;
+  }
+  .testimonial {
+    padding: 24px;
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: 18px;
+    transition: box-shadow 0.25s;
+  }
+  .testimonial:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.06); }
+  .testimonial-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 14px;
+  }
+  .testimonial-avatar {
+    width: 40px; height: 40px; min-width: 40px;
+    border-radius: 50%;
+    background: var(--green-100);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--green-800);
+  }
+  .testimonial-name  { font-size: 14px; font-weight: 500; }
+  .testimonial-meta  { font-size: 12px; color: var(--gray-400); }
+  .testimonial-stars { margin-left: auto; color: #f0a30a; font-size: 13px; letter-spacing: 1px; }
+  .testimonial-text  { font-size: 14px; color: var(--gray-600); line-height: 1.7; font-style: italic; }
+  .testimonial-result {
+    display: inline-block;
+    margin-top: 12px;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--green-800);
+    background: var(--green-100);
+    padding: 4px 12px;
+    border-radius: 100px;
+  }
+
+  /* ════════════════════════════
+     AUTORIDADE
+  ════════════════════════════ */
+  #autoridade {
+    background: var(--green-800);
+    color: #fff;
+  }
+  .autoridade-inner {
+    display: flex;
+    gap: 28px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+  .autoridade-photo {
+    width: 88px; height: 88px; min-width: 88px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.12);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 40px;
+    border: 3px solid rgba(255,255,255,0.2);
+  }
+  .autoridade-name {
+    font-family: var(--font-display);
+    font-size: 26px;
+    color: #fff;
+    margin-bottom: 4px;
+  }
+  .autoridade-crn { font-size: 13px; color: var(--green-200); margin-bottom: 12px; }
+  .autoridade-bio { font-size: 15px; color: rgba(255,255,255,0.7); line-height: 1.7; margin-bottom: 20px; }
+  .autoridade-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .badge {
+    font-size: 12px;
+    font-weight: 500;
+    padding: 5px 14px;
+    border-radius: 100px;
+    background: rgba(255,255,255,0.1);
+    color: rgba(255,255,255,0.85);
+    border: 1px solid rgba(255,255,255,0.18);
+  }
+
+  /* ════════════════════════════
+     OBJEÇÕES
+  ════════════════════════════ */
+  #objecoes { background: var(--white); }
+  .objecoes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 14px;
+    margin-top: 28px;
+  }
+  .objecao-card {
+    padding: 20px;
+    background: var(--green-50);
+    border: 1px solid var(--green-100);
+    border-radius: 14px;
+  }
+  .objecao-title { font-size: 14px; font-weight: 500; margin-bottom: 4px; color: var(--green-900); }
+  .objecao-body  { font-size: 13px; color: var(--green-800); line-height: 1.5; }
+
+  /* ════════════════════════════
+     OFERTA
+  ════════════════════════════ */
+  #oferta { background: var(--green-950); }
+  #oferta .section-h2 { color: #fff; }
+  .oferta-box {
+    margin-top: 32px;
+    padding: 32px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 20px;
+  }
+  .oferta-includes-title {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--green-200);
+    margin-bottom: 16px;
+  }
+  .oferta-bonus {
+    margin-top: 24px;
+    padding: 16px 20px;
+    background: rgba(168,216,122,0.08);
+    border: 1px solid rgba(168,216,122,0.2);
+    border-radius: 12px;
+  }
+  .oferta-bonus-label {
+    font-size: 11px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--green-200);
+    margin-bottom: 8px;
+  }
+  .oferta-bonus-items { font-size: 13px; color: rgba(255,255,255,0.7); line-height: 1.8; }
+
+  .urgencia {
+    margin-top: 20px;
+    padding: 14px 20px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 12px;
+    text-align: center;
+    font-size: 13px;
+    color: rgba(255,255,255,0.6);
+  }
+  .urgencia strong { color: rgba(255,255,255,0.85); }
+
+  /* ════════════════════════════
+     FAQ
+  ════════════════════════════ */
+  #faq { background: var(--cream); }
+  .faq-list { margin-top: 28px; display: flex; flex-direction: column; gap: 0; }
+  .faq-item {
+    border-bottom: 1px solid var(--gray-200);
+    overflow: hidden;
+  }
+  .faq-question {
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    font-family: var(--font-body);
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--gray-900);
+    cursor: pointer;
+    text-align: left;
+  }
+  .faq-icon {
+    width: 24px; height: 24px; min-width: 24px;
+    border-radius: 50%;
+    background: var(--green-100);
+    display: flex; align-items: center; justify-content: center;
+    transition: transform 0.3s var(--ease-out), background 0.2s;
+  }
+  .faq-item.open .faq-icon { transform: rotate(45deg); background: var(--green-700); }
+  .faq-item.open .faq-icon svg path { stroke: #fff; }
+  .faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s var(--ease-out);
+  }
+  .faq-answer p {
+    font-size: 14px;
+    color: var(--gray-600);
+    line-height: 1.75;
+    padding-bottom: 20px;
+  }
+
+  /* ════════════════════════════
+     CTA FINAL
+  ════════════════════════════ */
+  #cta-final {
+    background: var(--green-700);
+    text-align: center;
+    padding: var(--section-pad) 24px;
+  }
+  #cta-final .section-h2 { color: #fff; max-width: 480px; margin-inline: auto; }
+  .cta-final-sub {
+    font-size: 16px;
+    color: rgba(255,255,255,0.7);
+    max-width: 400px;
+    margin: 0 auto 32px;
+  }
+  .cta-final-note {
+    margin-top: 16px;
+    font-size: 12px;
+    color: rgba(255,255,255,0.45);
+  }
+
+  /* ════════════════════════════
+     FOOTER
+  ════════════════════════════ */
+  footer {
+    background: var(--green-950);
+    padding: 32px 24px;
+    text-align: center;
+  }
+  .footer-logo {
+    font-family: var(--font-display);
+    font-size: 20px;
+    color: var(--green-200);
+    margin-bottom: 8px;
+  }
+  .footer-sub { font-size: 12px; color: rgba(255,255,255,0.35); }
+
+  /* ════════════════════════════
+     MOBILE
+  ════════════════════════════ */
+  @media (max-width: 540px) {
+    .hero-cta-row { flex-direction: column; align-items: stretch; }
+    .btn-full-mobile { width: 100%; }
+    .autoridade-inner { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav id="nav">
+  <a href="#hero" class="nav-logo">Dra. Ana Silva</a>
+  <a href="#oferta" class="btn btn-primary nav-cta">Agendar consulta</a>
+</nav>
+
+<!-- ════════════════════════════
+     HERO
+════════════════════════════ -->
+<section id="hero">
+  <div class="hero-inner">
+
+    <div class="hero-badge reveal">
+      <span class="hero-badge-dot"></span>
+      Nutricionista · Emagrecimento Sustentável
+    </div>
+
+    <h1 class="hero-h1 reveal reveal-delay-1">
+      Emagreça de forma<br>
+      <span class="highlight">definitiva</span><br>
+      sem dietas restritivas<br>
+      ou efeito sanfona
+    </h1>
+
+    <p class="hero-sub reveal reveal-delay-2">
+      Método personalizado que se adapta à sua rotina — mesmo que você já tenha tentado de tudo e não conseguiu manter resultados.
+    </p>
+
+    <div class="hero-checks reveal reveal-delay-3">
+      <div class="hero-check">
+        <svg width="18" height="18" viewBox="0 0 18 18"><circle cx="9" cy="9" r="9" fill="rgba(168,216,122,0.2)"/><polyline points="5,9 8,12 13,6" fill="none" stroke="#a8d87a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Perca peso sem passar fome
+      </div>
+      <div class="hero-check">
+        <svg width="18" height="18" viewBox="0 0 18 18"><circle cx="9" cy="9" r="9" fill="rgba(168,216,122,0.2)"/><polyline points="5,9 8,12 13,6" fill="none" stroke="#a8d87a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Aprenda a comer sem culpa
+      </div>
+      <div class="hero-check">
+        <svg width="18" height="18" viewBox="0 0 18 18"><circle cx="9" cy="9" r="9" fill="rgba(168,216,122,0.2)"/><polyline points="5,9 8,12 13,6" fill="none" stroke="#a8d87a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Resultados sustentáveis a longo prazo
+      </div>
+    </div>
+
+    <div class="hero-cta-row reveal reveal-delay-4">
+      <a href="#oferta" class="btn btn-white btn-full-mobile">Quero começar minha transformação</a>
+    </div>
+
+    <div class="hero-proof reveal reveal-delay-4">
+      <div class="hero-proof-photo">
+        <!-- Substitua o conteúdo abaixo pela tag <img> da foto real -->
+        <!-- Exemplo: <img src="foto-nutricionista.jpg" alt="Dra. Ana Silva"> -->
+        <span class="photo-placeholder">Sua foto aqui</span>
+      </div>
+      <div>
+        <div class="hero-proof-name">Dra. Ana Silva</div>
+        <div class="hero-proof-role">Nutricionista · CRN 12345</div>
+        <div class="hero-proof-stat">+500 pacientes atendidos</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ════════════════════════════
+     DOR
+════════════════════════════ -->
+<section id="dor">
+  <div class="container">
+    <div class="section-label reveal"><span class="tag tag-green">Você se identifica?</span></div>
+    <h2 class="section-h2 reveal">Você sente que já tentou de tudo… mas nada funciona?</h2>
+
+    <div class="dor-grid reveal">
+      <div class="dor-item">
+        <div class="dor-icon">😔</div>
+        <p class="dor-text">Já começou várias dietas e desistiu no meio do caminho</p>
+      </div>
+      <div class="dor-item">
+        <div class="dor-icon">🔄</div>
+        <p class="dor-text">Perde peso… e depois ganha tudo de volta</p>
+      </div>
+      <div class="dor-item">
+        <div class="dor-icon">😰</div>
+        <p class="dor-text">Sente culpa ao comer e vive em ciclo de restrição e exagero</p>
+      </div>
+      <div class="dor-item">
+        <div class="dor-icon">⏰</div>
+        <p class="dor-text">Falta tempo ou energia para seguir planos complicados</p>
+      </div>
+    </div>
+
+    <div class="dor-callout reveal">
+      O problema não é falta de força de vontade. É o <strong>método errado</strong> para você.
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════
+     CRENÇA
+════════════════════════════ -->
+<section id="crenca">
+  <div class="container">
+    <div class="section-label reveal"><span class="tag tag-dark">Novo olhar</span></div>
+    <h2 class="section-h2 reveal">Emagrecimento não deveria ser sofrimento</h2>
+    <p class="section-body reveal" style="color:rgba(255,255,255,0.6);">
+      Dietas genéricas ignoram sua rotina, seu corpo e sua realidade. Por isso você falha — não porque você não consegue, mas porque ninguém te ensinou o caminho certo.
+    </p>
+    <div class="crenca-quote reveal">
+      <p>"Não é falta de disciplina — é falta do método certo para você."</p>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════
+     SOLUÇÃO
+════════════════════════════ -->
+<section id="solucao">
+  <div class="container">
+    <div class="section-label reveal"><span class="tag tag-green">O método</span></div>
+    <h2 class="section-h2 reveal">Um plano feito para a sua vida — não o contrário</h2>
+    <p class="section-body reveal">
+      Aqui você não recebe uma dieta pronta. Você recebe um plano estratégico, personalizado e sustentável.
+    </p>
+
+    <div class="solucao-cards">
+      <div class="solucao-card reveal reveal-delay-1">
+        <div class="solucao-card-icon">🗓️</div>
+        <div class="solucao-card-title">Plano adaptado à rotina</div>
+        <div class="solucao-card-body">Cada detalhe do plano considera sua realidade, horários e preferências alimentares.</div>
+      </div>
+      <div class="solucao-card reveal reveal-delay-2">
+        <div class="solucao-card-icon">🧠</div>
+        <div class="solucao-card-title">Controle da compulsão</div>
+        <div class="solucao-card-body">Estratégias práticas para entender a fome emocional e desenvolver uma relação saudável com a comida.</div>
+      </div>
+      <div class="solucao-card reveal reveal-delay-3">
+        <div class="solucao-card-icon">📊</div>
+        <div class="solucao-card-title">Acompanhamento contínuo</div>
+        <div class="solucao-card-body">Suporte real, com ajustes constantes baseados no seu progresso.</div>
+      </div>
+      <div class="solucao-card reveal reveal-delay-4">
+        <div class="solucao-card-icon">✅</div>
+        <div class="solucao-card-title">Resultados sustentáveis</div>
+        <div class="solucao-card-body">Sem efeito sanfona. O objetivo é que você aprenda a viver bem com a comida para sempre.</div>
+      </div>
+    </div>
+
+    <div style="margin-top: 32px; text-align: center;" class="reveal">
+      <a href="#oferta" class="btn btn-outline">Quero um plano personalizado</a>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════
+     PROCESSO
+════════════════════════════ -->
+<section id="processo">
+  <div class="container">
+    <div class="section-label reveal"><span class="tag tag-green">Processo</span></div>
+    <h2 class="section-h2 reveal">Simples, direto e adaptado à sua realidade</h2>
+
+    <div class="steps">
+      <div class="step reveal">
+        <div class="step-left">
+          <div class="step-num">1</div>
+          <div class="step-line"></div>
+        </div>
+        <div class="step-content">
+          <div class="step-title">Avaliação completa do seu perfil</div>
+          <div class="step-body">Entendemos sua rotina, histórico de saúde, relação com a comida e objetivos reais.</div>
+        </div>
+      </div>
+      <div class="step reveal reveal-delay-1">
+        <div class="step-left">
+          <div class="step-num">2</div>
+          <div class="step-line"></div>
+        </div>
+        <div class="step-content">
+          <div class="step-title">Criação do plano personalizado</div>
+          <div class="step-body">Desenvolvemos um plano estratégico feito sob medida para a sua vida — não uma dieta genérica.</div>
+        </div>
+      </div>
+      <div class="step reveal reveal-delay-2">
+        <div class="step-left">
+          <div class="step-num">3</div>
+          <div class="step-line"></div>
+        </div>
+        <div class="step-content">
+          <div class="step-title">Acompanhamento e ajustes constantes</div>
+          <div class="step-body">Revisamos o plano conforme seu progresso real, garantindo que você nunca fique parado.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════
+     DEPOIMENTOS
+════════════════════════════ -->
+<section id="depoimentos">
+  <div class="container">
+    <div class="section-label reveal"><span class="tag tag-green">Depoimentos</span></div>
+    <h2 class="section-h2 reveal">Pessoas comuns, resultados reais</h2>
+
+    <div class="testimonials-grid">
+      <div class="testimonial reveal">
+        <div class="testimonial-header">
+          <div class="testimonial-avatar">MC</div>
+          <div>
+            <div class="testimonial-name">Maria C.</div>
+            <div class="testimonial-meta">São Paulo, SP</div>
+          </div>
+          <div class="testimonial-stars">★★★★★</div>
+        </div>
+        <p class="testimonial-text">"Eu já tinha tentado várias dietas, mas sempre desistia. Dessa vez foi diferente — consegui emagrecer sem sofrimento e manter o resultado."</p>
+        <span class="testimonial-result">Perdeu 12kg em 4 meses</span>
+      </div>
+
+      <div class="testimonial reveal reveal-delay-1">
+        <div class="testimonial-header">
+          <div class="testimonial-avatar">RS</div>
+          <div>
+            <div class="testimonial-name">Rafael S.</div>
+            <div class="testimonial-meta">Belo Horizonte, MG</div>
+          </div>
+          <div class="testimonial-stars">★★★★★</div>
+        </div>
+        <p class="testimonial-text">"Nunca imaginei que conseguiria comer bem com uma rotina tão corrida. O plano foi 100% adaptado pra mim e finalmente mantive o resultado."</p>
+        <span class="testimonial-result">Manteve o resultado por 1 ano</span>
+      </div>
+
+      <div class="testimonial reveal reveal-delay-2">
+        <div class="testimonial-header">
+          <div class="testimonial-avatar">LF</div>
+          <div>
+            <div class="testimonial-name">Luciana F.</div>
+            <div class="testimonial-meta">Rio de Janeiro, RJ</div>
+          </div>
+          <div class="testimonial-stars">★★★★★</div>
+        </div>
+        <p class="testimonial-text">"Finalmente entendi que o problema nunca foi a comida — foi a falta de um método certo. Mudou completamente minha relação com a alimentação."</p>
+        <span class="testimonial-result">Eliminou a compulsão alimentar</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════
+     AUTORIDADE
+════════════════════════════ -->
+<section id="autoridade">
+  <div class="container">
+    <div class="autoridade-inner reveal">
+      <div class="autoridade-photo">👩‍⚕️</div>
+      <div>
+        <h2 class="autoridade-name">Dra. Ana Silva</h2>
+        <p class="autoridade-crn">CRN 12345 · Nutricionista Clínica</p>
+        <p class="autoridade-bio">
+          Especializada em emagrecimento sustentável, ajudo pessoas a recuperarem controle e confiança alimentar sem sofrimento. Minha abordagem une ciência nutricional com respeito à rotina e à individualidade de cada paciente.
+        </p>
+        <div class="autoridade-badges">
+          <span class="badge">+500 pacientes</span>
+          <span class="badge">8 anos de atuação</span>
+          <span class="badge">Pós-graduada em Nutrição Clínica</span>
+          <span class="badge">Especialista em Comportamento Alimentar</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════
+     OBJEÇÕES
+════════════════════════════ -->
+<section id="objecoes">
+  <div class="container">
+    <div class="section-label reveal"><span class="tag tag-green">Sem desculpas</span></div>
+    <h2 class="section-h2 reveal">Isso é para você, mesmo que…</h2>
+
+    <div class="objecoes-grid">
+      <div class="objecao-card reveal reveal-delay-1">
+        <div class="objecao-title">Você não tenha tempo</div>
+        <div class="objecao-body">O plano é feito para encaixar na sua agenda, não o contrário.</div>
+      </div>
+      <div class="objecao-card reveal reveal-delay-2">
+        <div class="objecao-title">Já tentou várias vezes</div>
+        <div class="objecao-body">Cada tentativa te ensinou algo. Agora você terá o método certo.</div>
+      </div>
+      <div class="objecao-card reveal reveal-delay-3">
+        <div class="objecao-title">Acha que não tem disciplina</div>
+        <div class="objecao-body">Disciplina é consequência de um plano que faz sentido para você.</div>
+      </div>
+      <div class="objecao-card reveal reveal-delay-4">
+        <div class="objecao-title">Tem rotina corrida</div>
+        <div class="objecao-body">Estratégias práticas para quem tem pouco tempo mas quer resultado.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════
+     OFERTA
+════════════════════════════ -->
+<section id="oferta">
+  <div class="container">
+    <div class="section-label reveal"><span class="tag tag-dark">Oferta</span></div>
+    <h2 class="section-h2 reveal" style="color:#fff;">Comece sua transformação hoje</h2>
+
+    <div class="oferta-box reveal">
+      <p class="oferta-includes-title">O que está incluído</p>
+      <ul class="checklist checklist-white">
+        <li>Consulta completa de avaliação</li>
+        <li>Plano alimentar 100% personalizado</li>
+        <li>Suporte contínuo por mensagem</li>
+        <li>Ajustes semanais baseados no seu progresso</li>
+      </ul>
+
+      <div class="oferta-bonus">
+        <div class="oferta-bonus-label">+ Bônus inclusos</div>
+        <div class="oferta-bonus-items">
+          ✦ Guia alimentar prático para o dia a dia<br>
+          ✦ Lista de substituições inteligentes<br>
+          ✦ Estratégias para comer fora de casa
+        </div>
+      </div>
+
+      <div class="urgencia">
+        <strong>Vagas limitadas por semana</strong> para garantir acompanhamento de qualidade.
+      </div>
+
+      <div style="margin-top: 24px;">
+        <a href="#" class="btn btn-white btn-full" style="font-size:16px;">Agendar minha consulta</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════
+     FAQ
+════════════════════════════ -->
+<section id="faq">
+  <div class="container">
+    <div class="section-label reveal"><span class="tag tag-green">Dúvidas</span></div>
+    <h2 class="section-h2 reveal">Perguntas frequentes</h2>
+
+    <div class="faq-list reveal">
+      <div class="faq-item">
+        <button class="faq-question">
+          Preciso cortar tudo que gosto?
+          <div class="faq-icon">
+            <svg width="12" height="12" viewBox="0 0 12 12"><path d="M6 2v8M2 6h8" stroke="#3B6D11" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+        </button>
+        <div class="faq-answer"><p>Não. O plano é desenvolvido para encaixar nas suas preferências. A ideia é criar uma relação positiva com a comida, não de restrição absoluta.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">
+          Em quanto tempo vejo resultados?
+          <div class="faq-icon">
+            <svg width="12" height="12" viewBox="0 0 12 12"><path d="M6 2v8M2 6h8" stroke="#3B6D11" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+        </button>
+        <div class="faq-answer"><p>Os primeiros resultados costumam aparecer nas primeiras 3 a 4 semanas. O ritmo varia para cada pessoa, mas o acompanhamento garante progresso constante.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">
+          O plano é muito restritivo?
+          <div class="faq-icon">
+            <svg width="12" height="12" viewBox="0 0 12 12"><path d="M6 2v8M2 6h8" stroke="#3B6D11" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+        </button>
+        <div class="faq-answer"><p>Não. A proposta é justamente o oposto: um plano sustentável, realista e que caiba na sua vida. Sem sofrimento, sem privação extrema.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">
+          Funciona para quem trabalha o dia todo?
+          <div class="faq-icon">
+            <svg width="12" height="12" viewBox="0 0 12 12"><path d="M6 2v8M2 6h8" stroke="#3B6D11" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+        </button>
+        <div class="faq-answer"><p>Sim! Boa parte dos pacientes tem rotinas muito agitadas. O plano inclui estratégias práticas para quem tem pouco tempo para se dedicar à alimentação.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">
+          O acompanhamento é online ou presencial?
+          <div class="faq-icon">
+            <svg width="12" height="12" viewBox="0 0 12 12"><path d="M6 2v8M2 6h8" stroke="#3B6D11" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+        </button>
+        <div class="faq-answer"><p>Atendo nas duas modalidades. Você escolhe o que for mais conveniente para a sua rotina.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════
+     CTA FINAL
+════════════════════════════ -->
+<section id="cta-final">
+  <div class="container">
+    <p class="reveal" style="font-size:14px; color:rgba(255,255,255,0.55); margin-bottom: 12px;">Você pode continuar tentando sozinho…</p>
+    <h2 class="section-h2 reveal" style="color:#fff; max-width:480px; margin-inline:auto; margin-bottom:16px;">
+      Ou seguir um plano que realmente funciona
+    </h2>
+    <p class="cta-final-sub reveal">Sem sofrimento. Sem efeito sanfona. Com acompanhamento real.</p>
+    <div class="reveal">
+      <a href="#oferta" class="btn btn-white" style="font-size:16px; padding: 18px 40px;">
+        Quero emagrecer com acompanhamento
+      </a>
+    </div>
+    <p class="cta-final-note reveal">Vagas limitadas · Sem compromisso inicial</p>
+  </div>
+</section>
+
+<!-- ════════════════════════════
+     FOOTER
+════════════════════════════ -->
+<footer>
+  <div class="footer-logo">Dra. Ana Silva</div>
+  <p class="footer-sub">Nutricionista · CRN 12345 · Emagrecimento Sustentável</p>
+</footer>
+
+<!-- ════════════════════════════
+     JAVASCRIPT
+════════════════════════════ -->
+<script>
+  /* ── Nav scroll ── */
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 40);
+  }, { passive: true });
+
+  /* ── Scroll Reveal ── */
+  const revealEls = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  revealEls.forEach(el => observer.observe(el));
+
+  /* ── FAQ accordion ── */
+  document.querySelectorAll('.faq-question').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item   = btn.closest('.faq-item');
+      const answer = item.querySelector('.faq-answer');
+      const isOpen = item.classList.contains('open');
+
+      // close all
+      document.querySelectorAll('.faq-item.open').forEach(openItem => {
+        openItem.classList.remove('open');
+        openItem.querySelector('.faq-answer').style.maxHeight = '0';
+      });
+
+      // open clicked (if it was closed)
+      if (!isOpen) {
+        item.classList.add('open');
+        answer.style.maxHeight = answer.scrollHeight + 'px';
+      }
+    });
+  });
+
+  /* ── Hero entrance animation ── */
+  document.querySelectorAll('#hero .reveal').forEach((el, i) => {
+    el.style.transitionDelay = `${i * 0.12}s`;
+    el.classList.add('visible');
+  });
+</script>
+
+</body>
+</html>
