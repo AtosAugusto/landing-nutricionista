@@ -2,830 +2,761 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 <title>Dra. Ana Silva · Nutricionista | Emagrecimento Sustentável</title>
 <meta name="description" content="Nutricionista especializada em emagrecimento saudável e sustentável. Planos personalizados para perda de peso sem dietas restritivas. Agende sua consulta.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;800&display=swap" rel="stylesheet">
-
 <style>
-  /* ── Reset & Base ── */
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-  :root {
-    --green-950: #0d2205;
-    --green-900: #173404;
-    --green-800: #27500a;
-    --green-700: #3B6D11;
-    --green-600: #4a8415;
-    --green-400: #639922;
-    --green-200: #C0DD97;
-    --green-100: #EAF3DE;
-    --green-50:  #f4f9ed;
-    --cream:     #faf8f3;
-    --white:     #ffffff;
-    --gray-100:  #f5f4f0;
-    --gray-200:  #e8e6e1;
-    --gray-400:  #a09e98;
-    --gray-600:  #6b6962;
-    --gray-900:  #1c1b18;
-    --font-display: 'Poppins', system-ui, sans-serif;
-    --font-body:    'Poppins', system-ui, sans-serif;
-    --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
-    --section-pad: clamp(64px, 8vw, 112px);
-  }
+/* ═══════════════════════════════════════
+   RESET TOTAL
+═══════════════════════════════════════ */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-  html { scroll-behavior: smooth; }
+/* ═══════════════════════════════════════
+   VARIÁVEIS
+═══════════════════════════════════════ */
+:root {
+  --g950: #0d2205;
+  --g900: #173404;
+  --g800: #27500a;
+  --g700: #3B6D11;
+  --g600: #4a8415;
+  --g200: #C0DD97;
+  --g100: #EAF3DE;
+  --g50:  #f4f9ed;
+  --white: #ffffff;
+  --cream: #faf8f3;
+  --gray1: #f5f4f0;
+  --gray2: #e8e6e1;
+  --gray4: #a09e98;
+  --gray6: #6b6962;
+  --gray9: #1c1b18;
+  --accent: #a8d87a;
+  --font: 'Poppins', system-ui, sans-serif;
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
 
-  body {
-    font-family: var(--font-body);
-    background: var(--cream);
-    color: var(--gray-900);
-    line-height: 1.7;
-    overflow-x: hidden;
-  }
+/* ═══════════════════════════════════════
+   BASE
+═══════════════════════════════════════ */
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
 
-  img { max-width: 100%; display: block; }
+body {
+  font-family: var(--font);
+  background: var(--cream);
+  color: var(--gray9);
+  line-height: 1.7;
+  overflow-x: hidden;
+  width: 100%;
+}
 
-  /* ── Utilities ── */
-  .container {
-    width: min(680px, 100% - 48px);
-    margin-inline: auto;
-  }
+img {
+  max-width: 100%;
+  display: block;
+  height: auto;
+}
 
-  .tag {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    font-family: var(--font-body);
-    font-size: 11px;
-    font-weight: 500;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    padding: 5px 14px;
-    border-radius: 100px;
-  }
-  .tag-green  { background: var(--green-100); color: var(--green-800); }
-  .tag-white  { background: rgba(255,255,255,0.15); color: rgba(255,255,255,0.9); border: 1px solid rgba(255,255,255,0.3); }
-  .tag-dark   { background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.7); border: 1px solid rgba(255,255,255,0.15); }
+a { text-decoration: none; }
 
-  .btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    padding: 16px 32px;
-    border-radius: 100px;
-    font-family: var(--font-body);
-    font-size: 15px;
-    font-weight: 500;
-    cursor: pointer;
-    border: none;
-    text-decoration: none;
-    transition: transform 0.2s var(--ease-out), box-shadow 0.2s var(--ease-out), background 0.2s;
-    white-space: nowrap;
-  }
-  .btn:hover  { transform: translateY(-2px); }
-  .btn:active { transform: translateY(0); }
+/* ═══════════════════════════════════════
+   CONTAINER
+═══════════════════════════════════════ */
+.wrap {
+  width: 100%;
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
 
-  .btn-primary {
-    background: var(--green-700);
-    color: #fff;
-    box-shadow: 0 4px 24px rgba(59,109,17,0.35);
-  }
-  .btn-primary:hover { background: var(--green-800); box-shadow: 0 8px 32px rgba(59,109,17,0.45); }
+/* ═══════════════════════════════════════
+   BOTÕES
+═══════════════════════════════════════ */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font);
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  border-radius: 100px;
+  transition: transform 0.2s var(--ease), box-shadow 0.2s var(--ease);
+  white-space: nowrap;
+  text-decoration: none;
+}
+.btn:hover  { transform: translateY(-2px); }
+.btn:active { transform: scale(0.98); }
 
-  .btn-white {
-    background: #fff;
-    color: var(--green-800);
-    box-shadow: 0 4px 24px rgba(0,0,0,0.12);
-  }
-  .btn-white:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.18); }
+.btn-green {
+  background: var(--g700);
+  color: #fff;
+  font-size: 15px;
+  padding: 14px 28px;
+  box-shadow: 0 4px 20px rgba(59,109,17,0.35);
+}
+.btn-green:hover { background: var(--g800); box-shadow: 0 8px 28px rgba(59,109,17,0.45); }
 
-  .btn-outline {
-    background: transparent;
-    color: var(--green-700);
-    border: 1.5px solid var(--green-700);
-  }
-  .btn-outline:hover { background: var(--green-100); }
+.btn-white {
+  background: var(--white);
+  color: var(--g800);
+  font-size: 15px;
+  padding: 14px 28px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+}
+.btn-white:hover { box-shadow: 0 8px 28px rgba(0,0,0,0.18); }
 
-  .btn-full { width: 100%; }
+.btn-outline {
+  background: transparent;
+  color: var(--g700);
+  font-size: 15px;
+  padding: 13px 28px;
+  border: 1.5px solid var(--g700);
+}
+.btn-outline:hover { background: var(--g100); }
 
-  /* ── Check list ── */
-  .checklist { list-style: none; display: flex; flex-direction: column; gap: 12px; }
-  .checklist li {
-    display: flex;
-    align-items: flex-start;
-    gap: 12px;
-    font-size: 15px;
-    line-height: 1.6;
-  }
-  .checklist li::before {
-    content: '';
-    display: block;
-    width: 20px;
-    height: 20px;
-    min-width: 20px;
-    margin-top: 2px;
-    border-radius: 50%;
-    background: var(--green-100);
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpolyline points='4,10 8,14 16,6' fill='none' stroke='%233B6D11' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-  }
-  .checklist-white li { color: rgba(255,255,255,0.88); }
-  .checklist-white li::before {
-    background: rgba(255,255,255,0.15);
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpolyline points='4,10 8,14 16,6' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-  }
+.btn-full { width: 100%; }
 
-  /* ── Scroll Reveal ── */
-  .reveal {
-    opacity: 0;
-    transform: translateY(32px);
-    transition: opacity 0.7s var(--ease-out), transform 0.7s var(--ease-out);
-  }
-  .reveal.visible { opacity: 1; transform: none; }
-  .reveal-delay-1 { transition-delay: 0.1s; }
-  .reveal-delay-2 { transition-delay: 0.2s; }
-  .reveal-delay-3 { transition-delay: 0.3s; }
-  .reveal-delay-4 { transition-delay: 0.4s; }
+/* ═══════════════════════════════════════
+   TAG / BADGE
+═══════════════════════════════════════ */
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 5px 14px;
+  border-radius: 100px;
+  margin-bottom: 16px;
+}
+.tag-green { background: var(--g100); color: var(--g800); }
+.tag-white { background: rgba(255,255,255,0.12); color: rgba(255,255,255,0.85); border: 1px solid rgba(255,255,255,0.25); }
+.tag-dark  { background: rgba(255,255,255,0.07); color: rgba(255,255,255,0.65); border: 1px solid rgba(255,255,255,0.15); }
 
-  /* ════════════════════════════
-     NAV
-  ════════════════════════════ */
-  nav {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    z-index: 100;
-    padding: 14px 16px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    transition: background 0.3s, backdrop-filter 0.3s, box-shadow 0.3s;
-  }
-  nav.scrolled {
-    background: rgba(250,248,243,0.92);
-    backdrop-filter: blur(12px);
-    box-shadow: 0 1px 0 rgba(0,0,0,0.06);
-  }
-  .nav-logo {
-    font-family: var(--font-display);
-    font-size: clamp(14px, 4vw, 18px);
-    color: var(--green-700);
-    text-decoration: none;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    max-width: 60%;
-  }
-  .nav-cta {
-    font-size: clamp(11px, 3vw, 13px);
-    padding: 8px clamp(12px, 3vw, 22px);
-    white-space: nowrap;
-    flex-shrink: 0;
-  }
+/* ═══════════════════════════════════════
+   SEÇÃO BASE
+═══════════════════════════════════════ */
+.section {
+  width: 100%;
+  padding: 72px 0;
+}
+.section-h2 {
+  font-size: clamp(26px, 5vw, 38px);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  margin-bottom: 14px;
+}
+.section-body {
+  font-size: 16px;
+  color: var(--gray6);
+  line-height: 1.75;
+  max-width: 540px;
+}
 
-  @media (max-width: 360px) {
-    .nav-cta { display: none; }
-  }
+/* ═══════════════════════════════════════
+   CHECKLIST
+═══════════════════════════════════════ */
+.checklist {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.checklist li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 15px;
+  line-height: 1.6;
+}
+.checklist li::before {
+  content: '';
+  display: block;
+  width: 20px; height: 20px;
+  min-width: 20px;
+  margin-top: 2px;
+  border-radius: 50%;
+  background: var(--g100) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpolyline points='4,10 8,14 16,6' fill='none' stroke='%233B6D11' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat center;
+}
+.checklist-white li { color: rgba(255,255,255,0.88); }
+.checklist-white li::before {
+  background: rgba(255,255,255,0.15) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpolyline points='4,10 8,14 16,6' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat center;
+}
 
-  /* ════════════════════════════
-     HERO
-  ════════════════════════════ */
-  #hero {
-    background: linear-gradient(165deg, var(--green-950) 0%, var(--green-800) 50%, var(--green-600) 100%);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding-top: 72px;
-    position: relative;
-    overflow: hidden;
-  }
+/* ═══════════════════════════════════════
+   SCROLL REVEAL
+═══════════════════════════════════════ */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.65s var(--ease), transform 0.65s var(--ease);
+}
+.reveal.on { opacity: 1; transform: none; }
+.d1 { transition-delay: 0.08s; }
+.d2 { transition-delay: 0.16s; }
+.d3 { transition-delay: 0.24s; }
+.d4 { transition-delay: 0.32s; }
 
-  /* organic blob background */
-  #hero::before {
-    content: '';
-    position: absolute;
-    top: -20%;
-    right: -20%;
-    width: 70%;
-    aspect-ratio: 1;
-    background: radial-gradient(circle, rgba(192,221,151,0.12) 0%, transparent 70%);
-    border-radius: 50%;
-    pointer-events: none;
-  }
-  #hero::after {
-    content: '';
-    position: absolute;
-    bottom: 10%;
-    left: -10%;
-    width: 50%;
-    aspect-ratio: 1;
-    background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 70%);
-    border-radius: 50%;
-    pointer-events: none;
-  }
+/* ═══════════════════════════════════════
+   NAV
+═══════════════════════════════════════ */
+#nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 200;
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: background 0.3s, box-shadow 0.3s;
+}
+#nav.solid {
+  background: rgba(250,248,243,0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 1px 0 rgba(0,0,0,0.07);
+}
+.nav-logo {
+  font-size: clamp(13px, 3.5vw, 17px);
+  font-weight: 700;
+  color: var(--g700);
+  white-space: nowrap;
+}
+.nav-btn {
+  font-size: clamp(11px, 2.5vw, 13px);
+  padding: 8px clamp(14px, 3vw, 22px);
+  flex-shrink: 0;
+}
 
-  .hero-inner {
-    position: relative;
-    z-index: 1;
-    padding: clamp(24px, 4vw, 48px) 24px clamp(32px, 4vw, 48px);
-    max-width: 720px;
-    margin: 0 auto;
-    width: 100%;
-  }
+/* ═══════════════════════════════════════
+   HERO
+═══════════════════════════════════════ */
+#hero {
+  width: 100%;
+  background: linear-gradient(160deg, var(--g950) 0%, var(--g800) 55%, var(--g600) 100%);
+  padding: 80px 20px 48px;
+  position: relative;
+  overflow: hidden;
+}
+#hero::before {
+  content: '';
+  position: absolute;
+  top: -15%; right: -15%;
+  width: 60%; aspect-ratio: 1;
+  background: radial-gradient(circle, rgba(192,221,151,0.1) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+.hero-content {
+  width: 100%;
+  max-width: 640px;
+  margin: 0 auto;
+}
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 100px;
+  padding: 5px 14px 5px 8px;
+  font-size: 12px;
+  color: rgba(255,255,255,0.85);
+  margin-bottom: 20px;
+}
+.badge-dot {
+  width: 7px; height: 7px;
+  background: var(--accent);
+  border-radius: 50%;
+  animation: pulse 2s ease-in-out infinite;
+}
+@keyframes pulse {
+  0%,100% { opacity:1; transform:scale(1); }
+  50%      { opacity:0.5; transform:scale(1.4); }
+}
+.hero-h1 {
+  font-size: clamp(30px, 7vw, 54px);
+  font-weight: 800;
+  line-height: 1.1;
+  color: #fff;
+  letter-spacing: -0.02em;
+  margin-bottom: 16px;
+  max-width: 580px;
+}
+.hero-h1 .hl { color: var(--accent); }
+.hero-sub {
+  font-size: clamp(15px, 2.5vw, 18px);
+  font-weight: 400;
+  color: rgba(255,255,255,0.7);
+  line-height: 1.6;
+  max-width: 500px;
+  margin-bottom: 20px;
+}
+.hero-bullets {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  margin-bottom: 28px;
+}
+.hero-bullet {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 15px;
+  font-weight: 400;
+  color: rgba(255,255,255,0.85);
+}
+.bullet-icon {
+  width: 18px; height: 18px;
+  min-width: 18px;
+  border-radius: 50%;
+  background: rgba(168,216,122,0.2);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.hero-cta { margin-bottom: 24px; }
+.hero-card {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.14);
+  border-radius: 14px;
+  padding: 14px 18px;
+  max-width: 100%;
+}
+.hero-photo {
+  width: 52px; height: 52px;
+  min-width: 52px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.12);
+  border: 2px solid rgba(255,255,255,0.22);
+  overflow: hidden;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.hero-photo img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.photo-label {
+  font-size: 10px;
+  color: rgba(255,255,255,0.45);
+  text-align: center;
+  line-height: 1.3;
+}
+.hero-name  { font-size: 15px; font-weight: 600; color: #fff; margin-bottom: 2px; }
+.hero-crn   { font-size: 12px; color: rgba(255,255,255,0.55); margin-bottom: 4px; }
+.hero-stat  { font-size: 12px; font-weight: 500; color: var(--accent); }
 
-  .hero-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: rgba(255,255,255,0.1);
-    border: 1px solid rgba(255,255,255,0.2);
-    border-radius: 100px;
-    padding: 6px 16px 6px 8px;
-    margin-bottom: 14px;
-    font-size: 12px;
-    color: rgba(255,255,255,0.85);
-  }
-  .hero-badge-dot {
-    width: 8px; height: 8px;
-    background: #a8d87a;
-    border-radius: 50%;
-    animation: pulse 2s infinite;
-  }
-  @keyframes pulse {
-    0%, 100% { opacity: 1; transform: scale(1); }
-    50%       { opacity: 0.6; transform: scale(1.3); }
-  }
+/* ═══════════════════════════════════════
+   DOR
+═══════════════════════════════════════ */
+#dor { background: var(--white); }
+.dor-grid {
+  display: grid;
+  gap: 10px;
+  margin: 24px 0;
+}
+.dor-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 16px 18px;
+  background: var(--gray1);
+  border: 1px solid var(--gray2);
+  border-radius: 12px;
+  transition: border-color 0.2s, transform 0.2s;
+}
+.dor-item:hover { border-color: var(--g200); transform: translateX(3px); }
+.dor-icon {
+  width: 34px; height: 34px;
+  min-width: 34px;
+  border-radius: 9px;
+  background: var(--g100);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 16px;
+}
+.dor-text { font-size: 14px; color: var(--gray9); line-height: 1.5; padding-top: 5px; }
+.dor-callout {
+  padding: 18px 22px;
+  background: var(--g100);
+  border-left: 3px solid var(--g700);
+  border-radius: 0 12px 12px 0;
+  font-size: 15px;
+  font-style: italic;
+  color: var(--g900);
+  line-height: 1.6;
+}
 
-  .hero-h1 {
-    font-family: 'Poppins', sans-serif;
-    font-size: clamp(28px, 5.5vw, 56px);
-    font-weight: 800;
-    line-height: 1.12;
-    color: #fff;
-    margin-bottom: 14px;
-    letter-spacing: -0.02em;
-    max-width: 620px;
-  }
-  .hero-h1 .highlight {
-    color: #a8d87a;
-    position: relative;
-  }
+/* ═══════════════════════════════════════
+   CRENÇA
+═══════════════════════════════════════ */
+#crenca { background: var(--g950); }
+#crenca .section-h2 { color: #fff; }
+#crenca .section-body { color: rgba(255,255,255,0.6); }
+.crenca-quote {
+  margin-top: 28px;
+  padding: 22px 26px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 14px;
+}
+.crenca-quote p {
+  font-size: clamp(18px, 3vw, 26px);
+  font-weight: 700;
+  color: var(--g200);
+  line-height: 1.4;
+  font-style: italic;
+}
 
-  .hero-sub {
-    font-family: 'Poppins', sans-serif;
-    font-size: clamp(15px, 2vw, 18px);
-    font-weight: 400;
-    color: rgba(255,255,255,0.72);
-    max-width: 540px;
-    margin-bottom: 16px;
-    line-height: 1.55;
-  }
+/* ═══════════════════════════════════════
+   SOLUÇÃO
+═══════════════════════════════════════ */
+#solucao { background: var(--cream); }
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px;
+  margin-top: 28px;
+}
+.card {
+  padding: 22px;
+  background: var(--white);
+  border: 1px solid var(--gray2);
+  border-radius: 16px;
+  transition: transform 0.25s var(--ease), box-shadow 0.25s var(--ease), border-color 0.2s;
+}
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 36px rgba(59,109,17,0.1);
+  border-color: var(--g200);
+}
+.card-icon {
+  width: 42px; height: 42px;
+  border-radius: 11px;
+  background: var(--g100);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 20px;
+  margin-bottom: 12px;
+}
+.card-title { font-size: 15px; font-weight: 600; margin-bottom: 6px; }
+.card-body  { font-size: 13px; color: var(--gray6); line-height: 1.6; }
 
-  .hero-checks {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    margin-bottom: 20px;
-  }
-  .hero-check {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 15px;
-    font-weight: 400;
-    color: rgba(255,255,255,0.85);
-    line-height: 1.5;
-  }
-  .hero-check svg { flex-shrink: 0; }
+/* ═══════════════════════════════════════
+   PROCESSO
+═══════════════════════════════════════ */
+#processo { background: var(--white); }
+.steps { display: flex; flex-direction: column; margin-top: 28px; }
+.step  { display: flex; gap: 18px; }
+.step-l { display: flex; flex-direction: column; align-items: center; flex-shrink: 0; }
+.step-num {
+  width: 42px; height: 42px;
+  border-radius: 50%;
+  background: var(--g700);
+  color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 600; font-size: 16px;
+  flex-shrink: 0; z-index: 1;
+  transition: transform 0.2s;
+}
+.step:hover .step-num { transform: scale(1.1); }
+.step-line { width: 1px; flex: 1; background: var(--gray2); margin: 5px 0; min-height: 36px; }
+.step:last-child .step-line { display: none; }
+.step-r { padding: 4px 0 28px; }
+.step-title { font-size: 16px; font-weight: 600; margin-bottom: 5px; }
+.step-body  { font-size: 14px; color: var(--gray6); line-height: 1.6; }
 
-  .hero-cta-row {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 16px;
-    margin-bottom: 20px;
-  }
+/* ═══════════════════════════════════════
+   DEPOIMENTOS
+═══════════════════════════════════════ */
+#depoimentos { background: var(--cream); }
+.testimonials { display: flex; flex-direction: column; gap: 14px; margin-top: 28px; }
+.testimonial {
+  padding: 22px;
+  background: var(--white);
+  border: 1px solid var(--gray2);
+  border-radius: 16px;
+  transition: box-shadow 0.25s;
+}
+.testimonial:hover { box-shadow: 0 8px 28px rgba(0,0,0,0.06); }
+.testi-head {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  margin-bottom: 12px;
+}
+.testi-avatar {
+  width: 38px; height: 38px;
+  border-radius: 50%;
+  background: var(--g100);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 13px; font-weight: 600; color: var(--g800);
+  flex-shrink: 0;
+}
+.testi-name { font-size: 14px; font-weight: 600; }
+.testi-meta { font-size: 12px; color: var(--gray4); }
+.testi-stars { margin-left: auto; color: #f0a30a; font-size: 13px; letter-spacing: 1px; }
+.testi-text  { font-size: 14px; color: var(--gray6); line-height: 1.7; font-style: italic; }
+.testi-result {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 12px; font-weight: 500;
+  color: var(--g800); background: var(--g100);
+  padding: 3px 12px; border-radius: 100px;
+}
 
-  .hero-proof {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    padding: 16px 20px;
-    background: rgba(255,255,255,0.07);
-    border: 1px solid rgba(255,255,255,0.15);
-    border-radius: 16px;
-    backdrop-filter: blur(8px);
-    max-width: 420px;
-  }
-  .hero-proof-photo {
-    width: 56px; height: 56px; min-width: 56px;
-    border-radius: 50%;
-    background: rgba(255,255,255,0.12);
-    border: 2px solid rgba(255,255,255,0.25);
-    overflow: hidden;
-    display: flex; align-items: center; justify-content: center;
-    flex-shrink: 0;
-    position: relative;
-  }
-  .hero-proof-photo img {
-    width: 100%; height: 100%;
-    object-fit: cover;
-    border-radius: 50%;
-  }
-  .hero-proof-photo .photo-placeholder {
-    font-size: 11px;
-    font-weight: 500;
-    color: rgba(255,255,255,0.5);
-    text-align: center;
-    line-height: 1.3;
-    padding: 4px;
-  }
-  .hero-proof-name { font-size: 15px; font-weight: 600; color: #fff; margin-bottom: 2px; }
-  .hero-proof-role { font-size: 12px; color: rgba(255,255,255,0.55); margin-bottom: 4px; }
-  .hero-proof-stat { font-size: 12px; color: #a8d87a; font-weight: 500; }
+/* ═══════════════════════════════════════
+   AUTORIDADE
+═══════════════════════════════════════ */
+#autoridade { background: var(--g800); }
+.aut-inner {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+.aut-photo {
+  width: 84px; height: 84px;
+  min-width: 84px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.1);
+  border: 3px solid rgba(255,255,255,0.2);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 38px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.aut-photo img { width:100%; height:100%; object-fit:cover; border-radius:50%; }
+.aut-name { font-size: clamp(22px, 4vw, 30px); font-weight: 700; color: #fff; margin-bottom: 4px; }
+.aut-crn  { font-size: 13px; color: var(--g200); margin-bottom: 12px; font-weight: 500; }
+.aut-bio  { font-size: 15px; color: rgba(255,255,255,0.68); line-height: 1.7; margin-bottom: 18px; }
+.aut-badges { display: flex; flex-wrap: wrap; gap: 8px; }
+.badge-item {
+  font-size: 12px; font-weight: 500;
+  padding: 5px 14px; border-radius: 100px;
+  background: rgba(255,255,255,0.1);
+  color: rgba(255,255,255,0.82);
+  border: 1px solid rgba(255,255,255,0.16);
+}
 
-  /* ════════════════════════════
-     SECTION BASE
-  ════════════════════════════ */
-  section { padding: var(--section-pad) 24px; }
+/* ═══════════════════════════════════════
+   OBJEÇÕES
+═══════════════════════════════════════ */
+#objecoes { background: var(--white); }
+.obj-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 12px;
+  margin-top: 24px;
+}
+.obj-card {
+  padding: 18px;
+  background: var(--g50);
+  border: 1px solid var(--g100);
+  border-radius: 12px;
+}
+.obj-title { font-size: 14px; font-weight: 600; color: var(--g900); margin-bottom: 5px; }
+.obj-body  { font-size: 13px; color: var(--g800); line-height: 1.5; }
 
-  .section-label { margin-bottom: 16px; }
-  .section-h2 {
-    font-family: var(--font-display);
-    font-size: clamp(28px, 4vw, 40px);
-    line-height: 1.2;
-    letter-spacing: -0.01em;
-    margin-bottom: 16px;
-  }
-  .section-body {
-    font-size: 16px;
-    color: var(--gray-600);
-    line-height: 1.75;
-    max-width: 560px;
-  }
+/* ═══════════════════════════════════════
+   OFERTA
+═══════════════════════════════════════ */
+#oferta { background: var(--g950); }
+#oferta .section-h2 { color: #fff; }
+.oferta-box {
+  margin-top: 28px;
+  padding: 28px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 18px;
+}
+.oferta-label {
+  font-size: 11px; font-weight: 500;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--g200); margin-bottom: 14px;
+}
+.oferta-bonus {
+  margin-top: 20px;
+  padding: 14px 18px;
+  background: rgba(168,216,122,0.07);
+  border: 1px solid rgba(168,216,122,0.18);
+  border-radius: 10px;
+}
+.oferta-bonus-label {
+  font-size: 11px; font-weight: 500;
+  text-transform: uppercase; letter-spacing: 0.08em;
+  color: var(--g200); margin-bottom: 8px;
+}
+.oferta-bonus-items { font-size: 13px; color: rgba(255,255,255,0.65); line-height: 1.9; }
+.urgencia {
+  margin-top: 18px;
+  padding: 12px 16px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 10px;
+  text-align: center;
+  font-size: 13px; color: rgba(255,255,255,0.58);
+}
+.urgencia strong { color: rgba(255,255,255,0.85); }
 
-  /* ════════════════════════════
-     DOR
-  ════════════════════════════ */
-  #dor { background: var(--white); }
-  .dor-grid {
-    display: grid;
-    gap: 12px;
-    margin: 28px 0;
-  }
-  .dor-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 14px;
-    padding: 18px 20px;
-    background: var(--gray-100);
-    border-radius: 14px;
-    border: 1px solid var(--gray-200);
-    transition: border-color 0.2s, transform 0.2s;
-  }
-  .dor-item:hover { border-color: var(--green-200); transform: translateX(4px); }
-  .dor-icon {
-    width: 36px; height: 36px; min-width: 36px;
-    border-radius: 10px;
-    background: var(--green-100);
-    display: flex; align-items: center; justify-content: center;
-    font-size: 16px;
-  }
-  .dor-text { font-size: 15px; color: var(--gray-900); line-height: 1.5; padding-top: 6px; }
+/* ═══════════════════════════════════════
+   FAQ
+═══════════════════════════════════════ */
+#faq { background: var(--cream); }
+.faq-list { margin-top: 24px; }
+.faq-item { border-bottom: 1px solid var(--gray2); overflow: hidden; }
+.faq-btn {
+  width: 100%; background: none; border: none;
+  padding: 18px 0;
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  font-family: var(--font); font-size: 15px; font-weight: 500;
+  color: var(--gray9); cursor: pointer; text-align: left;
+}
+.faq-icon {
+  width: 24px; height: 24px; min-width: 24px;
+  border-radius: 50%; background: var(--g100);
+  display: flex; align-items: center; justify-content: center;
+  transition: transform 0.3s var(--ease), background 0.2s;
+  flex-shrink: 0;
+}
+.faq-item.open .faq-icon { transform: rotate(45deg); background: var(--g700); }
+.faq-item.open .faq-icon path { stroke: #fff; }
+.faq-ans {
+  max-height: 0; overflow: hidden;
+  transition: max-height 0.4s var(--ease);
+}
+.faq-ans p { font-size: 14px; color: var(--gray6); line-height: 1.75; padding-bottom: 18px; }
 
-  .dor-callout {
-    padding: 20px 24px;
-    background: var(--green-100);
-    border-radius: 14px;
-    border-left: 3px solid var(--green-700);
-    font-size: 15px;
-    color: var(--green-900);
-    line-height: 1.6;
-    font-style: italic;
-  }
+/* ═══════════════════════════════════════
+   CTA FINAL
+═══════════════════════════════════════ */
+#cta-final {
+  background: var(--g700);
+  text-align: center;
+}
+#cta-final .section-h2 { color: #fff; max-width: 460px; margin-inline: auto; }
+.cta-sub  { font-size: 16px; color: rgba(255,255,255,0.68); max-width: 380px; margin: 0 auto 28px; }
+.cta-note { margin-top: 14px; font-size: 12px; color: rgba(255,255,255,0.4); }
 
-  /* ════════════════════════════
-     CRENÇA
-  ════════════════════════════ */
-  #crenca { background: var(--green-950); }
-  #crenca .section-h2 { color: #fff; }
-  #crenca .section-body { color: rgba(255,255,255,0.6); }
-  .crenca-quote {
-    margin-top: 32px;
-    padding: 24px 28px;
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,255,255,0.1);
-    border-radius: 16px;
-  }
-  .crenca-quote p {
-    font-family: var(--font-display);
-    font-size: clamp(20px, 3vw, 28px);
-    color: var(--green-200);
-    line-height: 1.4;
-    font-style: italic;
-  }
+/* ═══════════════════════════════════════
+   FOOTER
+═══════════════════════════════════════ */
+footer {
+  background: var(--g950);
+  padding: 32px 20px;
+  text-align: center;
+}
+.foot-logo { font-size: 20px; font-weight: 700; color: var(--g200); margin-bottom: 6px; }
+.foot-sub  { font-size: 12px; color: rgba(255,255,255,0.3); }
 
-  /* ════════════════════════════
-     SOLUÇÃO
-  ════════════════════════════ */
-  #solucao { background: var(--cream); }
-  .solucao-cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 16px;
-    margin-top: 32px;
-  }
-  .solucao-card {
-    padding: 24px;
-    background: var(--white);
-    border: 1px solid var(--gray-200);
-    border-radius: 18px;
-    transition: transform 0.25s var(--ease-out), box-shadow 0.25s var(--ease-out);
-  }
-  .solucao-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 40px rgba(59,109,17,0.1);
-    border-color: var(--green-200);
-  }
-  .solucao-card-icon {
-    width: 44px; height: 44px;
-    border-radius: 12px;
-    background: var(--green-100);
-    display: flex; align-items: center; justify-content: center;
-    font-size: 20px;
-    margin-bottom: 14px;
-  }
-  .solucao-card-title { font-size: 15px; font-weight: 500; margin-bottom: 6px; }
-  .solucao-card-body  { font-size: 13px; color: var(--gray-600); line-height: 1.6; }
+/* ═══════════════════════════════════════
+   MOBILE AJUSTES
+═══════════════════════════════════════ */
+@media (max-width: 480px) {
+  .hero-h1 { font-size: 28px; }
+  .cards-grid { grid-template-columns: 1fr; }
+  .obj-grid   { grid-template-columns: 1fr; }
+  .oferta-box { padding: 20px; }
+  .btn-green, .btn-white, .btn-outline { font-size: 14px; padding: 13px 22px; }
+  .hero-card { width: 100%; }
+  .aut-inner { flex-direction: column; }
+}
 
-  /* ════════════════════════════
-     COMO FUNCIONA
-  ════════════════════════════ */
-  #processo { background: var(--white); }
-  .steps { display: flex; flex-direction: column; gap: 0; margin-top: 32px; }
-  .step {
-    display: flex;
-    gap: 20px;
-    position: relative;
-  }
-  .step-left {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    flex-shrink: 0;
-  }
-  .step-num {
-    width: 44px; height: 44px;
-    border-radius: 50%;
-    background: var(--green-700);
-    color: #fff;
-    display: flex; align-items: center; justify-content: center;
-    font-weight: 500;
-    font-size: 16px;
-    flex-shrink: 0;
-    position: relative;
-    z-index: 1;
-    transition: transform 0.2s;
-  }
-  .step:hover .step-num { transform: scale(1.1); }
-  .step-line {
-    width: 1px;
-    flex: 1;
-    background: var(--gray-200);
-    margin: 6px 0;
-    min-height: 40px;
-  }
-  .step:last-child .step-line { display: none; }
-  .step-content { padding: 8px 0 32px; }
-  .step-title { font-size: 17px; font-weight: 500; margin-bottom: 6px; }
-  .step-body  { font-size: 14px; color: var(--gray-600); line-height: 1.6; }
+@media (max-width: 360px) {
+  .nav-btn { display: none; }
+  #hero { padding: 70px 16px 40px; }
+  .wrap { padding: 0 16px; }
+}
 
-  /* ════════════════════════════
-     DEPOIMENTOS
-  ════════════════════════════ */
-  #depoimentos { background: var(--cream); }
-  .testimonials-grid {
-    display: grid;
-    gap: 16px;
-    margin-top: 32px;
-  }
-  .testimonial {
-    padding: 24px;
-    background: var(--white);
-    border: 1px solid var(--gray-200);
-    border-radius: 18px;
-    transition: box-shadow 0.25s;
-  }
-  .testimonial:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.06); }
-  .testimonial-header {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 14px;
-  }
-  .testimonial-avatar {
-    width: 40px; height: 40px; min-width: 40px;
-    border-radius: 50%;
-    background: var(--green-100);
-    display: flex; align-items: center; justify-content: center;
-    font-size: 13px;
-    font-weight: 500;
-    color: var(--green-800);
-  }
-  .testimonial-name  { font-size: 14px; font-weight: 500; }
-  .testimonial-meta  { font-size: 12px; color: var(--gray-400); }
-  .testimonial-stars { margin-left: auto; color: #f0a30a; font-size: 13px; letter-spacing: 1px; }
-  .testimonial-text  { font-size: 14px; color: var(--gray-600); line-height: 1.7; font-style: italic; }
-  .testimonial-result {
-    display: inline-block;
-    margin-top: 12px;
-    font-size: 12px;
-    font-weight: 500;
-    color: var(--green-800);
-    background: var(--green-100);
-    padding: 4px 12px;
-    border-radius: 100px;
-  }
-
-  /* ════════════════════════════
-     AUTORIDADE
-  ════════════════════════════ */
-  #autoridade {
-    background: var(--green-800);
-    color: #fff;
-  }
-  .autoridade-inner {
-    display: flex;
-    gap: 28px;
-    align-items: flex-start;
-    flex-wrap: wrap;
-  }
-  .autoridade-photo {
-    width: 88px; height: 88px; min-width: 88px;
-    border-radius: 50%;
-    background: rgba(255,255,255,0.12);
-    display: flex; align-items: center; justify-content: center;
-    font-size: 40px;
-    border: 3px solid rgba(255,255,255,0.2);
-  }
-  .autoridade-name {
-    font-family: var(--font-display);
-    font-size: 26px;
-    color: #fff;
-    margin-bottom: 4px;
-  }
-  .autoridade-crn { font-size: 13px; color: var(--green-200); margin-bottom: 12px; }
-  .autoridade-bio { font-size: 15px; color: rgba(255,255,255,0.7); line-height: 1.7; margin-bottom: 20px; }
-  .autoridade-badges {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-  }
-  .badge {
-    font-size: 12px;
-    font-weight: 500;
-    padding: 5px 14px;
-    border-radius: 100px;
-    background: rgba(255,255,255,0.1);
-    color: rgba(255,255,255,0.85);
-    border: 1px solid rgba(255,255,255,0.18);
-  }
-
-  /* ════════════════════════════
-     OBJEÇÕES
-  ════════════════════════════ */
-  #objecoes { background: var(--white); }
-  .objecoes-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 14px;
-    margin-top: 28px;
-  }
-  .objecao-card {
-    padding: 20px;
-    background: var(--green-50);
-    border: 1px solid var(--green-100);
-    border-radius: 14px;
-  }
-  .objecao-title { font-size: 14px; font-weight: 500; margin-bottom: 4px; color: var(--green-900); }
-  .objecao-body  { font-size: 13px; color: var(--green-800); line-height: 1.5; }
-
-  /* ════════════════════════════
-     OFERTA
-  ════════════════════════════ */
-  #oferta { background: var(--green-950); }
-  #oferta .section-h2 { color: #fff; }
-  .oferta-box {
-    margin-top: 32px;
-    padding: 32px;
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,255,255,0.12);
-    border-radius: 20px;
-  }
-  .oferta-includes-title {
-    font-size: 12px;
-    font-weight: 500;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--green-200);
-    margin-bottom: 16px;
-  }
-  .oferta-bonus {
-    margin-top: 24px;
-    padding: 16px 20px;
-    background: rgba(168,216,122,0.08);
-    border: 1px solid rgba(168,216,122,0.2);
-    border-radius: 12px;
-  }
-  .oferta-bonus-label {
-    font-size: 11px;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: var(--green-200);
-    margin-bottom: 8px;
-  }
-  .oferta-bonus-items { font-size: 13px; color: rgba(255,255,255,0.7); line-height: 1.8; }
-
-  .urgencia {
-    margin-top: 20px;
-    padding: 14px 20px;
-    background: rgba(255,255,255,0.06);
-    border-radius: 12px;
-    text-align: center;
-    font-size: 13px;
-    color: rgba(255,255,255,0.6);
-  }
-  .urgencia strong { color: rgba(255,255,255,0.85); }
-
-  /* ════════════════════════════
-     FAQ
-  ════════════════════════════ */
-  #faq { background: var(--cream); }
-  .faq-list { margin-top: 28px; display: flex; flex-direction: column; gap: 0; }
-  .faq-item {
-    border-bottom: 1px solid var(--gray-200);
-    overflow: hidden;
-  }
-  .faq-question {
-    width: 100%;
-    background: none;
-    border: none;
-    padding: 20px 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 16px;
-    font-family: var(--font-body);
-    font-size: 15px;
-    font-weight: 500;
-    color: var(--gray-900);
-    cursor: pointer;
-    text-align: left;
-  }
-  .faq-icon {
-    width: 24px; height: 24px; min-width: 24px;
-    border-radius: 50%;
-    background: var(--green-100);
-    display: flex; align-items: center; justify-content: center;
-    transition: transform 0.3s var(--ease-out), background 0.2s;
-  }
-  .faq-item.open .faq-icon { transform: rotate(45deg); background: var(--green-700); }
-  .faq-item.open .faq-icon svg path { stroke: #fff; }
-  .faq-answer {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.4s var(--ease-out);
-  }
-  .faq-answer p {
-    font-size: 14px;
-    color: var(--gray-600);
-    line-height: 1.75;
-    padding-bottom: 20px;
-  }
-
-  /* ════════════════════════════
-     CTA FINAL
-  ════════════════════════════ */
-  #cta-final {
-    background: var(--green-700);
-    text-align: center;
-    padding: var(--section-pad) 24px;
-  }
-  #cta-final .section-h2 { color: #fff; max-width: 480px; margin-inline: auto; }
-  .cta-final-sub {
-    font-size: 16px;
-    color: rgba(255,255,255,0.7);
-    max-width: 400px;
-    margin: 0 auto 32px;
-  }
-  .cta-final-note {
-    margin-top: 16px;
-    font-size: 12px;
-    color: rgba(255,255,255,0.45);
-  }
-
-  /* ════════════════════════════
-     FOOTER
-  ════════════════════════════ */
-  footer {
-    background: var(--green-950);
-    padding: 32px 24px;
-    text-align: center;
-  }
-  .footer-logo {
-    font-family: var(--font-display);
-    font-size: 20px;
-    color: var(--green-200);
-    margin-bottom: 8px;
-  }
-  .footer-sub { font-size: 12px; color: rgba(255,255,255,0.35); }
-
-  /* ════════════════════════════
-     MOBILE
-  ════════════════════════════ */
-  @media (max-width: 540px) {
-    .hero-cta-row { flex-direction: column; align-items: stretch; }
-    .btn-full-mobile { width: 100%; }
-    .autoridade-inner { flex-direction: column; }
-  }
 </style>
 </head>
 <body>
 
-<!-- ── NAV ── -->
+<!-- ══ NAV ══ -->
 <nav id="nav">
-  <a href="#hero" class="nav-logo">Dra. Ana Silva</a>
-  <a href="#oferta" class="btn btn-primary nav-cta">Agendar consulta</a>
+  <span class="nav-logo">Dra. Ana Silva</span>
+  <a href="#oferta" class="btn btn-green nav-btn">Agendar consulta</a>
 </nav>
 
-<!-- ════════════════════════════
-     HERO
-════════════════════════════ -->
+<!-- ══ HERO ══ -->
 <section id="hero">
-  <div class="hero-inner">
+  <div class="hero-content">
 
     <div class="hero-badge reveal">
-      <span class="hero-badge-dot"></span>
+      <span class="badge-dot"></span>
       Nutricionista · Emagrecimento Sustentável
     </div>
 
-    <h1 class="hero-h1 reveal reveal-delay-1">
+    <h1 class="hero-h1 reveal d1">
       Emagreça de forma<br>
-      <span class="highlight">definitiva</span><br>
+      <span class="hl">definitiva</span><br>
       sem dietas restritivas<br>
       ou efeito sanfona
     </h1>
 
-    <p class="hero-sub reveal reveal-delay-2">
+    <p class="hero-sub reveal d2">
       Método personalizado que se adapta à sua rotina — mesmo que você já tenha tentado de tudo e não conseguiu manter resultados.
     </p>
 
-    <div class="hero-checks reveal reveal-delay-3">
-      <div class="hero-check">
-        <svg width="18" height="18" viewBox="0 0 18 18"><circle cx="9" cy="9" r="9" fill="rgba(168,216,122,0.2)"/><polyline points="5,9 8,12 13,6" fill="none" stroke="#a8d87a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <div class="hero-bullets reveal d3">
+      <div class="hero-bullet">
+        <div class="bullet-icon">
+          <svg width="10" height="10" viewBox="0 0 10 10"><polyline points="2,5 4,7.5 8,2.5" fill="none" stroke="#a8d87a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
         Perca peso sem passar fome
       </div>
-      <div class="hero-check">
-        <svg width="18" height="18" viewBox="0 0 18 18"><circle cx="9" cy="9" r="9" fill="rgba(168,216,122,0.2)"/><polyline points="5,9 8,12 13,6" fill="none" stroke="#a8d87a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <div class="hero-bullet">
+        <div class="bullet-icon">
+          <svg width="10" height="10" viewBox="0 0 10 10"><polyline points="2,5 4,7.5 8,2.5" fill="none" stroke="#a8d87a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
         Aprenda a comer sem culpa
       </div>
-      <div class="hero-check">
-        <svg width="18" height="18" viewBox="0 0 18 18"><circle cx="9" cy="9" r="9" fill="rgba(168,216,122,0.2)"/><polyline points="5,9 8,12 13,6" fill="none" stroke="#a8d87a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <div class="hero-bullet">
+        <div class="bullet-icon">
+          <svg width="10" height="10" viewBox="0 0 10 10"><polyline points="2,5 4,7.5 8,2.5" fill="none" stroke="#a8d87a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
         Resultados sustentáveis a longo prazo
       </div>
     </div>
 
-    <div class="hero-cta-row reveal reveal-delay-4">
-      <a href="#oferta" class="btn btn-white btn-full-mobile">Quero começar minha transformação</a>
+    <div class="hero-cta reveal d4">
+      <a href="#oferta" class="btn btn-white">Quero começar minha transformação</a>
     </div>
 
-    <div class="hero-proof reveal reveal-delay-4">
-      <div class="hero-proof-photo">
-        <!-- Substitua o conteúdo abaixo pela tag <img> da foto real -->
-        <!-- Exemplo: <img src="foto-nutricionista.jpg" alt="Dra. Ana Silva"> -->
-        <span class="photo-placeholder">Sua foto aqui</span>
+    <div class="hero-card reveal d4">
+      <div class="hero-photo">
+        <!-- Para adicionar foto: <img src="foto-nutricionista.jpg" alt="Dra. Ana Silva"> -->
+        <span class="photo-label">Sua<br>foto</span>
       </div>
       <div>
-        <div class="hero-proof-name">Dra. Ana Silva</div>
-        <div class="hero-proof-role">Nutricionista · CRN 12345</div>
-        <div class="hero-proof-stat">+500 pacientes atendidos</div>
+        <div class="hero-name">Dra. Ana Silva</div>
+        <div class="hero-crn">Nutricionista · CRN 12345</div>
+        <div class="hero-stat">+500 pacientes atendidos</div>
       </div>
     </div>
 
   </div>
 </section>
 
-<!-- ════════════════════════════
-     DOR
-════════════════════════════ -->
-<section id="dor">
-  <div class="container">
-    <div class="section-label reveal"><span class="tag tag-green">Você se identifica?</span></div>
+<!-- ══ DOR ══ -->
+<section id="dor" class="section">
+  <div class="wrap">
+    <div class="reveal"><span class="tag tag-green">Você se identifica?</span></div>
     <h2 class="section-h2 reveal">Você sente que já tentou de tudo… mas nada funciona?</h2>
-
     <div class="dor-grid reveal">
       <div class="dor-item">
         <div class="dor-icon">😔</div>
@@ -844,21 +775,18 @@
         <p class="dor-text">Falta tempo ou energia para seguir planos complicados</p>
       </div>
     </div>
-
     <div class="dor-callout reveal">
       O problema não é falta de força de vontade. É o <strong>método errado</strong> para você.
     </div>
   </div>
 </section>
 
-<!-- ════════════════════════════
-     CRENÇA
-════════════════════════════ -->
-<section id="crenca">
-  <div class="container">
-    <div class="section-label reveal"><span class="tag tag-dark">Novo olhar</span></div>
+<!-- ══ CRENÇA ══ -->
+<section id="crenca" class="section">
+  <div class="wrap">
+    <div class="reveal"><span class="tag tag-dark">Novo olhar</span></div>
     <h2 class="section-h2 reveal">Emagrecimento não deveria ser sofrimento</h2>
-    <p class="section-body reveal" style="color:rgba(255,255,255,0.6);">
+    <p class="section-body reveal">
       Dietas genéricas ignoram sua rotina, seu corpo e sua realidade. Por isso você falha — não porque você não consegue, mas porque ninguém te ensinou o caminho certo.
     </p>
     <div class="crenca-quote reveal">
@@ -867,210 +795,158 @@
   </div>
 </section>
 
-<!-- ════════════════════════════
-     SOLUÇÃO
-════════════════════════════ -->
-<section id="solucao">
-  <div class="container">
-    <div class="section-label reveal"><span class="tag tag-green">O método</span></div>
+<!-- ══ SOLUÇÃO ══ -->
+<section id="solucao" class="section">
+  <div class="wrap">
+    <div class="reveal"><span class="tag tag-green">O método</span></div>
     <h2 class="section-h2 reveal">Um plano feito para a sua vida — não o contrário</h2>
-    <p class="section-body reveal">
-      Aqui você não recebe uma dieta pronta. Você recebe um plano estratégico, personalizado e sustentável.
-    </p>
-
-    <div class="solucao-cards">
-      <div class="solucao-card reveal reveal-delay-1">
-        <div class="solucao-card-icon">🗓️</div>
-        <div class="solucao-card-title">Plano adaptado à rotina</div>
-        <div class="solucao-card-body">Cada detalhe do plano considera sua realidade, horários e preferências alimentares.</div>
+    <p class="section-body reveal">Aqui você não recebe uma dieta pronta. Você recebe um plano estratégico, personalizado e sustentável.</p>
+    <div class="cards-grid">
+      <div class="card reveal d1">
+        <div class="card-icon">🗓️</div>
+        <div class="card-title">Plano adaptado à rotina</div>
+        <div class="card-body">Cada detalhe considera sua realidade, horários e preferências alimentares.</div>
       </div>
-      <div class="solucao-card reveal reveal-delay-2">
-        <div class="solucao-card-icon">🧠</div>
-        <div class="solucao-card-title">Controle da compulsão</div>
-        <div class="solucao-card-body">Estratégias práticas para entender a fome emocional e desenvolver uma relação saudável com a comida.</div>
+      <div class="card reveal d2">
+        <div class="card-icon">🧠</div>
+        <div class="card-title">Controle da compulsão</div>
+        <div class="card-body">Estratégias práticas para uma relação saudável com a comida.</div>
       </div>
-      <div class="solucao-card reveal reveal-delay-3">
-        <div class="solucao-card-icon">📊</div>
-        <div class="solucao-card-title">Acompanhamento contínuo</div>
-        <div class="solucao-card-body">Suporte real, com ajustes constantes baseados no seu progresso.</div>
+      <div class="card reveal d3">
+        <div class="card-icon">📊</div>
+        <div class="card-title">Acompanhamento contínuo</div>
+        <div class="card-body">Suporte real com ajustes baseados no seu progresso.</div>
       </div>
-      <div class="solucao-card reveal reveal-delay-4">
-        <div class="solucao-card-icon">✅</div>
-        <div class="solucao-card-title">Resultados sustentáveis</div>
-        <div class="solucao-card-body">Sem efeito sanfona. O objetivo é que você aprenda a viver bem com a comida para sempre.</div>
+      <div class="card reveal d4">
+        <div class="card-icon">✅</div>
+        <div class="card-title">Resultados sustentáveis</div>
+        <div class="card-body">Sem efeito sanfona. Você aprende a viver bem com a comida para sempre.</div>
       </div>
     </div>
-
-    <div style="margin-top: 32px; text-align: center;" class="reveal">
+    <div style="margin-top:28px;" class="reveal">
       <a href="#oferta" class="btn btn-outline">Quero um plano personalizado</a>
     </div>
   </div>
 </section>
 
-<!-- ════════════════════════════
-     PROCESSO
-════════════════════════════ -->
-<section id="processo">
-  <div class="container">
-    <div class="section-label reveal"><span class="tag tag-green">Processo</span></div>
+<!-- ══ PROCESSO ══ -->
+<section id="processo" class="section">
+  <div class="wrap">
+    <div class="reveal"><span class="tag tag-green">Como funciona</span></div>
     <h2 class="section-h2 reveal">Simples, direto e adaptado à sua realidade</h2>
-
     <div class="steps">
       <div class="step reveal">
-        <div class="step-left">
-          <div class="step-num">1</div>
-          <div class="step-line"></div>
-        </div>
-        <div class="step-content">
+        <div class="step-l"><div class="step-num">1</div><div class="step-line"></div></div>
+        <div class="step-r">
           <div class="step-title">Avaliação completa do seu perfil</div>
-          <div class="step-body">Entendemos sua rotina, histórico de saúde, relação com a comida e objetivos reais.</div>
+          <div class="step-body">Entendemos sua rotina, histórico, relação com a comida e objetivos reais.</div>
         </div>
       </div>
-      <div class="step reveal reveal-delay-1">
-        <div class="step-left">
-          <div class="step-num">2</div>
-          <div class="step-line"></div>
-        </div>
-        <div class="step-content">
+      <div class="step reveal d1">
+        <div class="step-l"><div class="step-num">2</div><div class="step-line"></div></div>
+        <div class="step-r">
           <div class="step-title">Criação do plano personalizado</div>
-          <div class="step-body">Desenvolvemos um plano estratégico feito sob medida para a sua vida — não uma dieta genérica.</div>
+          <div class="step-body">Um plano estratégico feito sob medida para a sua vida — não uma dieta genérica.</div>
         </div>
       </div>
-      <div class="step reveal reveal-delay-2">
-        <div class="step-left">
-          <div class="step-num">3</div>
-          <div class="step-line"></div>
-        </div>
-        <div class="step-content">
+      <div class="step reveal d2">
+        <div class="step-l"><div class="step-num">3</div><div class="step-line"></div></div>
+        <div class="step-r">
           <div class="step-title">Acompanhamento e ajustes constantes</div>
-          <div class="step-body">Revisamos o plano conforme seu progresso real, garantindo que você nunca fique parado.</div>
+          <div class="step-body">Revisamos o plano conforme seu progresso real para que você nunca fique parado.</div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ════════════════════════════
-     DEPOIMENTOS
-════════════════════════════ -->
-<section id="depoimentos">
-  <div class="container">
-    <div class="section-label reveal"><span class="tag tag-green">Depoimentos</span></div>
+<!-- ══ DEPOIMENTOS ══ -->
+<section id="depoimentos" class="section">
+  <div class="wrap">
+    <div class="reveal"><span class="tag tag-green">Depoimentos</span></div>
     <h2 class="section-h2 reveal">Pessoas comuns, resultados reais</h2>
-
-    <div class="testimonials-grid">
+    <div class="testimonials">
       <div class="testimonial reveal">
-        <div class="testimonial-header">
-          <div class="testimonial-avatar">MC</div>
-          <div>
-            <div class="testimonial-name">Maria C.</div>
-            <div class="testimonial-meta">São Paulo, SP</div>
-          </div>
-          <div class="testimonial-stars">★★★★★</div>
+        <div class="testi-head">
+          <div class="testi-avatar">MC</div>
+          <div><div class="testi-name">Maria C.</div><div class="testi-meta">São Paulo, SP</div></div>
+          <div class="testi-stars">★★★★★</div>
         </div>
-        <p class="testimonial-text">"Eu já tinha tentado várias dietas, mas sempre desistia. Dessa vez foi diferente — consegui emagrecer sem sofrimento e manter o resultado."</p>
-        <span class="testimonial-result">Perdeu 12kg em 4 meses</span>
+        <p class="testi-text">"Eu já tinha tentado várias dietas, mas sempre desistia. Dessa vez foi diferente — consegui emagrecer sem sofrimento e manter o resultado."</p>
+        <span class="testi-result">Perdeu 12kg em 4 meses</span>
       </div>
-
-      <div class="testimonial reveal reveal-delay-1">
-        <div class="testimonial-header">
-          <div class="testimonial-avatar">RS</div>
-          <div>
-            <div class="testimonial-name">Rafael S.</div>
-            <div class="testimonial-meta">Belo Horizonte, MG</div>
-          </div>
-          <div class="testimonial-stars">★★★★★</div>
+      <div class="testimonial reveal d1">
+        <div class="testi-head">
+          <div class="testi-avatar">RS</div>
+          <div><div class="testi-name">Rafael S.</div><div class="testi-meta">Belo Horizonte, MG</div></div>
+          <div class="testi-stars">★★★★★</div>
         </div>
-        <p class="testimonial-text">"Nunca imaginei que conseguiria comer bem com uma rotina tão corrida. O plano foi 100% adaptado pra mim e finalmente mantive o resultado."</p>
-        <span class="testimonial-result">Manteve o resultado por 1 ano</span>
+        <p class="testi-text">"Nunca imaginei que conseguiria comer bem com uma rotina tão corrida. O plano foi 100% adaptado pra mim e finalmente mantive o resultado."</p>
+        <span class="testi-result">Manteve o resultado por 1 ano</span>
       </div>
-
-      <div class="testimonial reveal reveal-delay-2">
-        <div class="testimonial-header">
-          <div class="testimonial-avatar">LF</div>
-          <div>
-            <div class="testimonial-name">Luciana F.</div>
-            <div class="testimonial-meta">Rio de Janeiro, RJ</div>
-          </div>
-          <div class="testimonial-stars">★★★★★</div>
+      <div class="testimonial reveal d2">
+        <div class="testi-head">
+          <div class="testi-avatar">LF</div>
+          <div><div class="testi-name">Luciana F.</div><div class="testi-meta">Rio de Janeiro, RJ</div></div>
+          <div class="testi-stars">★★★★★</div>
         </div>
-        <p class="testimonial-text">"Finalmente entendi que o problema nunca foi a comida — foi a falta de um método certo. Mudou completamente minha relação com a alimentação."</p>
-        <span class="testimonial-result">Eliminou a compulsão alimentar</span>
+        <p class="testi-text">"Finalmente entendi que o problema nunca foi a comida — foi a falta de um método certo. Mudou completamente minha relação com a alimentação."</p>
+        <span class="testi-result">Eliminou a compulsão alimentar</span>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ════════════════════════════
-     AUTORIDADE
-════════════════════════════ -->
-<section id="autoridade">
-  <div class="container">
-    <div class="autoridade-inner reveal">
-      <div class="autoridade-photo">👩‍⚕️</div>
+<!-- ══ AUTORIDADE ══ -->
+<section id="autoridade" class="section">
+  <div class="wrap">
+    <div class="aut-inner reveal">
+      <div class="aut-photo">
+        <!-- <img src="foto-nutricionista.jpg" alt="Dra. Ana Silva"> -->
+        👩‍⚕️
+      </div>
       <div>
-        <h2 class="autoridade-name">Dra. Ana Silva</h2>
-        <p class="autoridade-crn">CRN 12345 · Nutricionista Clínica</p>
-        <p class="autoridade-bio">
-          Especializada em emagrecimento sustentável, ajudo pessoas a recuperarem controle e confiança alimentar sem sofrimento. Minha abordagem une ciência nutricional com respeito à rotina e à individualidade de cada paciente.
-        </p>
-        <div class="autoridade-badges">
-          <span class="badge">+500 pacientes</span>
-          <span class="badge">8 anos de atuação</span>
-          <span class="badge">Pós-graduada em Nutrição Clínica</span>
-          <span class="badge">Especialista em Comportamento Alimentar</span>
+        <h2 class="aut-name">Dra. Ana Silva</h2>
+        <p class="aut-crn">CRN 12345 · Nutricionista Clínica</p>
+        <p class="aut-bio">Especializada em emagrecimento sustentável, ajudo pessoas a recuperarem controle e confiança alimentar sem sofrimento. Minha abordagem une ciência nutricional com respeito à rotina e à individualidade de cada paciente.</p>
+        <div class="aut-badges">
+          <span class="badge-item">+500 pacientes</span>
+          <span class="badge-item">8 anos de atuação</span>
+          <span class="badge-item">Pós-graduada em Nutrição Clínica</span>
+          <span class="badge-item">Especialista em Comportamento Alimentar</span>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ════════════════════════════
-     OBJEÇÕES
-════════════════════════════ -->
-<section id="objecoes">
-  <div class="container">
-    <div class="section-label reveal"><span class="tag tag-green">Sem desculpas</span></div>
+<!-- ══ OBJEÇÕES ══ -->
+<section id="objecoes" class="section">
+  <div class="wrap">
+    <div class="reveal"><span class="tag tag-green">Sem desculpas</span></div>
     <h2 class="section-h2 reveal">Isso é para você, mesmo que…</h2>
-
-    <div class="objecoes-grid">
-      <div class="objecao-card reveal reveal-delay-1">
-        <div class="objecao-title">Você não tenha tempo</div>
-        <div class="objecao-body">O plano é feito para encaixar na sua agenda, não o contrário.</div>
-      </div>
-      <div class="objecao-card reveal reveal-delay-2">
-        <div class="objecao-title">Já tentou várias vezes</div>
-        <div class="objecao-body">Cada tentativa te ensinou algo. Agora você terá o método certo.</div>
-      </div>
-      <div class="objecao-card reveal reveal-delay-3">
-        <div class="objecao-title">Acha que não tem disciplina</div>
-        <div class="objecao-body">Disciplina é consequência de um plano que faz sentido para você.</div>
-      </div>
-      <div class="objecao-card reveal reveal-delay-4">
-        <div class="objecao-title">Tem rotina corrida</div>
-        <div class="objecao-body">Estratégias práticas para quem tem pouco tempo mas quer resultado.</div>
-      </div>
+    <div class="obj-grid">
+      <div class="obj-card reveal d1"><div class="obj-title">Você não tenha tempo</div><div class="obj-body">O plano é feito para encaixar na sua agenda, não o contrário.</div></div>
+      <div class="obj-card reveal d2"><div class="obj-title">Já tentou várias vezes</div><div class="obj-body">Cada tentativa te ensinou algo. Agora você terá o método certo.</div></div>
+      <div class="obj-card reveal d3"><div class="obj-title">Acha que não tem disciplina</div><div class="obj-body">Disciplina é consequência de um plano que faz sentido para você.</div></div>
+      <div class="obj-card reveal d4"><div class="obj-title">Tem rotina corrida</div><div class="obj-body">Estratégias práticas para quem tem pouco tempo mas quer resultado.</div></div>
     </div>
   </div>
 </section>
 
-<!-- ════════════════════════════
-     OFERTA
-════════════════════════════ -->
-<section id="oferta">
-  <div class="container">
-    <div class="section-label reveal"><span class="tag tag-dark">Oferta</span></div>
-    <h2 class="section-h2 reveal" style="color:#fff;">Comece sua transformação hoje</h2>
-
+<!-- ══ OFERTA ══ -->
+<section id="oferta" class="section">
+  <div class="wrap">
+    <div class="reveal"><span class="tag tag-dark">Oferta</span></div>
+    <h2 class="section-h2 reveal">Comece sua transformação hoje</h2>
     <div class="oferta-box reveal">
-      <p class="oferta-includes-title">O que está incluído</p>
+      <p class="oferta-label">O que está incluído</p>
       <ul class="checklist checklist-white">
         <li>Consulta completa de avaliação</li>
         <li>Plano alimentar 100% personalizado</li>
         <li>Suporte contínuo por mensagem</li>
         <li>Ajustes semanais baseados no seu progresso</li>
       </ul>
-
       <div class="oferta-bonus">
         <div class="oferta-bonus-label">+ Bônus inclusos</div>
         <div class="oferta-bonus-items">
@@ -1079,150 +955,101 @@
           ✦ Estratégias para comer fora de casa
         </div>
       </div>
-
       <div class="urgencia">
         <strong>Vagas limitadas por semana</strong> para garantir acompanhamento de qualidade.
       </div>
-
-      <div style="margin-top: 24px;">
-        <a href="#" class="btn btn-white btn-full" style="font-size:16px;">Agendar minha consulta</a>
+      <div style="margin-top:22px;">
+        <a href="#" class="btn btn-white btn-full" style="font-size:15px;">Agendar minha consulta</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ════════════════════════════
-     FAQ
-════════════════════════════ -->
-<section id="faq">
-  <div class="container">
-    <div class="section-label reveal"><span class="tag tag-green">Dúvidas</span></div>
+<!-- ══ FAQ ══ -->
+<section id="faq" class="section">
+  <div class="wrap">
+    <div class="reveal"><span class="tag tag-green">Dúvidas</span></div>
     <h2 class="section-h2 reveal">Perguntas frequentes</h2>
-
     <div class="faq-list reveal">
       <div class="faq-item">
-        <button class="faq-question">
-          Preciso cortar tudo que gosto?
-          <div class="faq-icon">
-            <svg width="12" height="12" viewBox="0 0 12 12"><path d="M6 2v8M2 6h8" stroke="#3B6D11" stroke-width="1.5" stroke-linecap="round"/></svg>
-          </div>
-        </button>
-        <div class="faq-answer"><p>Não. O plano é desenvolvido para encaixar nas suas preferências. A ideia é criar uma relação positiva com a comida, não de restrição absoluta.</p></div>
+        <button class="faq-btn">Preciso cortar tudo que gosto?<div class="faq-icon"><svg width="12" height="12" viewBox="0 0 12 12"><path d="M6 2v8M2 6h8" stroke="#3B6D11" stroke-width="1.5" stroke-linecap="round"/></svg></div></button>
+        <div class="faq-ans"><p>Não. O plano é desenvolvido para encaixar nas suas preferências. A ideia é criar uma relação positiva com a comida, não de restrição absoluta.</p></div>
       </div>
       <div class="faq-item">
-        <button class="faq-question">
-          Em quanto tempo vejo resultados?
-          <div class="faq-icon">
-            <svg width="12" height="12" viewBox="0 0 12 12"><path d="M6 2v8M2 6h8" stroke="#3B6D11" stroke-width="1.5" stroke-linecap="round"/></svg>
-          </div>
-        </button>
-        <div class="faq-answer"><p>Os primeiros resultados costumam aparecer nas primeiras 3 a 4 semanas. O ritmo varia para cada pessoa, mas o acompanhamento garante progresso constante.</p></div>
+        <button class="faq-btn">Em quanto tempo vejo resultados?<div class="faq-icon"><svg width="12" height="12" viewBox="0 0 12 12"><path d="M6 2v8M2 6h8" stroke="#3B6D11" stroke-width="1.5" stroke-linecap="round"/></svg></div></button>
+        <div class="faq-ans"><p>Os primeiros resultados costumam aparecer nas primeiras 3 a 4 semanas. O acompanhamento garante progresso constante.</p></div>
       </div>
       <div class="faq-item">
-        <button class="faq-question">
-          O plano é muito restritivo?
-          <div class="faq-icon">
-            <svg width="12" height="12" viewBox="0 0 12 12"><path d="M6 2v8M2 6h8" stroke="#3B6D11" stroke-width="1.5" stroke-linecap="round"/></svg>
-          </div>
-        </button>
-        <div class="faq-answer"><p>Não. A proposta é justamente o oposto: um plano sustentável, realista e que caiba na sua vida. Sem sofrimento, sem privação extrema.</p></div>
+        <button class="faq-btn">O plano é muito restritivo?<div class="faq-icon"><svg width="12" height="12" viewBox="0 0 12 12"><path d="M6 2v8M2 6h8" stroke="#3B6D11" stroke-width="1.5" stroke-linecap="round"/></svg></div></button>
+        <div class="faq-ans"><p>Não. A proposta é justamente o oposto: um plano sustentável, realista e que caiba na sua vida. Sem sofrimento, sem privação extrema.</p></div>
       </div>
       <div class="faq-item">
-        <button class="faq-question">
-          Funciona para quem trabalha o dia todo?
-          <div class="faq-icon">
-            <svg width="12" height="12" viewBox="0 0 12 12"><path d="M6 2v8M2 6h8" stroke="#3B6D11" stroke-width="1.5" stroke-linecap="round"/></svg>
-          </div>
-        </button>
-        <div class="faq-answer"><p>Sim! Boa parte dos pacientes tem rotinas muito agitadas. O plano inclui estratégias práticas para quem tem pouco tempo para se dedicar à alimentação.</p></div>
+        <button class="faq-btn">Funciona para quem trabalha o dia todo?<div class="faq-icon"><svg width="12" height="12" viewBox="0 0 12 12"><path d="M6 2v8M2 6h8" stroke="#3B6D11" stroke-width="1.5" stroke-linecap="round"/></svg></div></button>
+        <div class="faq-ans"><p>Sim! Boa parte dos pacientes tem rotinas muito agitadas. O plano inclui estratégias práticas para quem tem pouco tempo.</p></div>
       </div>
       <div class="faq-item">
-        <button class="faq-question">
-          O acompanhamento é online ou presencial?
-          <div class="faq-icon">
-            <svg width="12" height="12" viewBox="0 0 12 12"><path d="M6 2v8M2 6h8" stroke="#3B6D11" stroke-width="1.5" stroke-linecap="round"/></svg>
-          </div>
-        </button>
-        <div class="faq-answer"><p>Atendo nas duas modalidades. Você escolhe o que for mais conveniente para a sua rotina.</p></div>
+        <button class="faq-btn">O acompanhamento é online ou presencial?<div class="faq-icon"><svg width="12" height="12" viewBox="0 0 12 12"><path d="M6 2v8M2 6h8" stroke="#3B6D11" stroke-width="1.5" stroke-linecap="round"/></svg></div></button>
+        <div class="faq-ans"><p>Atendo nas duas modalidades. Você escolhe o que for mais conveniente para a sua rotina.</p></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ════════════════════════════
-     CTA FINAL
-════════════════════════════ -->
-<section id="cta-final">
-  <div class="container">
-    <p class="reveal" style="font-size:14px; color:rgba(255,255,255,0.55); margin-bottom: 12px;">Você pode continuar tentando sozinho…</p>
-    <h2 class="section-h2 reveal" style="color:#fff; max-width:480px; margin-inline:auto; margin-bottom:16px;">
-      Ou seguir um plano que realmente funciona
-    </h2>
-    <p class="cta-final-sub reveal">Sem sofrimento. Sem efeito sanfona. Com acompanhamento real.</p>
+<!-- ══ CTA FINAL ══ -->
+<section id="cta-final" class="section">
+  <div class="wrap">
+    <p class="reveal" style="font-size:14px;color:rgba(255,255,255,0.5);margin-bottom:10px;">Você pode continuar tentando sozinho…</p>
+    <h2 class="section-h2 reveal">Ou seguir um plano que realmente funciona</h2>
+    <p class="cta-sub reveal">Sem sofrimento. Sem efeito sanfona. Com acompanhamento real.</p>
     <div class="reveal">
-      <a href="#oferta" class="btn btn-white" style="font-size:16px; padding: 18px 40px;">
-        Quero emagrecer com acompanhamento
-      </a>
+      <a href="#oferta" class="btn btn-white" style="font-size:15px;padding:16px 36px;">Quero emagrecer com acompanhamento</a>
     </div>
-    <p class="cta-final-note reveal">Vagas limitadas · Sem compromisso inicial</p>
+    <p class="cta-note reveal">Vagas limitadas · Sem compromisso inicial</p>
   </div>
 </section>
 
-<!-- ════════════════════════════
-     FOOTER
-════════════════════════════ -->
+<!-- ══ FOOTER ══ -->
 <footer>
-  <div class="footer-logo">Dra. Ana Silva</div>
-  <p class="footer-sub">Nutricionista · CRN 12345 · Emagrecimento Sustentável</p>
+  <div class="foot-logo">Dra. Ana Silva</div>
+  <p class="foot-sub">Nutricionista · CRN 12345 · Emagrecimento Sustentável</p>
 </footer>
 
-<!-- ════════════════════════════
-     JAVASCRIPT
-════════════════════════════ -->
 <script>
-  /* ── Nav scroll ── */
+  /* Nav */
   const nav = document.getElementById('nav');
   window.addEventListener('scroll', () => {
-    nav.classList.toggle('scrolled', window.scrollY > 40);
+    nav.classList.toggle('solid', window.scrollY > 30);
   }, { passive: true });
 
-  /* ── Scroll Reveal ── */
-  const revealEls = document.querySelectorAll('.reveal');
-  const observer = new IntersectionObserver((entries) => {
+  /* Scroll Reveal */
+  const io = new IntersectionObserver((entries) => {
     entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.add('visible');
-        observer.unobserve(e.target);
-      }
+      if (e.isIntersecting) { e.target.classList.add('on'); io.unobserve(e.target); }
     });
-  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-  revealEls.forEach(el => observer.observe(el));
+  }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
-  /* ── FAQ accordion ── */
-  document.querySelectorAll('.faq-question').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const item   = btn.closest('.faq-item');
-      const answer = item.querySelector('.faq-answer');
-      const isOpen = item.classList.contains('open');
-
-      // close all
-      document.querySelectorAll('.faq-item.open').forEach(openItem => {
-        openItem.classList.remove('open');
-        openItem.querySelector('.faq-answer').style.maxHeight = '0';
-      });
-
-      // open clicked (if it was closed)
-      if (!isOpen) {
-        item.classList.add('open');
-        answer.style.maxHeight = answer.scrollHeight + 'px';
-      }
-    });
+  /* Hero entra imediato */
+  document.querySelectorAll('#hero .reveal').forEach((el, i) => {
+    el.style.transitionDelay = (i * 0.1) + 's';
+    el.classList.add('on');
   });
 
-  /* ── Hero entrance animation ── */
-  document.querySelectorAll('#hero .reveal').forEach((el, i) => {
-    el.style.transitionDelay = `${i * 0.12}s`;
-    el.classList.add('visible');
+  /* FAQ */
+  document.querySelectorAll('.faq-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const ans  = item.querySelector('.faq-ans');
+      const open = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(o => {
+        o.classList.remove('open');
+        o.querySelector('.faq-ans').style.maxHeight = '0';
+      });
+      if (!open) {
+        item.classList.add('open');
+        ans.style.maxHeight = ans.scrollHeight + 'px';
+      }
+    });
   });
 </script>
 
